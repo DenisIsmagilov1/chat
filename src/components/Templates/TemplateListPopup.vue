@@ -9,7 +9,7 @@
     }"
   >
     <div @click="close" class="close-new close">
-      <img src="@/assets/img/close.png" alt="" />
+      <img src="@/assets/img/cancel-22.png" alt="" />
     </div>
     <div class="templates__header">
       <div class="templates__title">Ваши шаблоны</div>

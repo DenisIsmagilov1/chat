@@ -2,7 +2,7 @@
   <div
     class="chat__item chat-item"
     :class="{
-      block: !!$store.state.meta.currentChatId,
+      block1: !!$store.state.meta.currentChatId,
     }"
   >
     <ChatListHeader :mobile="true" />

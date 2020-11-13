@@ -4,7 +4,7 @@
     :class="{ open: $store.getters.getStatusPopup('settings') }"
   >
     <div @click="close" class="close-new close">
-      <img src="@/assets/img/close.png" alt="" />
+      <img src="@/assets/img/cancel-22.png" alt="" />
     </div>
     <div class="settings__header-top">
       <span class="settings__icon">

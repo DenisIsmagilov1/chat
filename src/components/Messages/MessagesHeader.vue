@@ -39,7 +39,11 @@
       </span>
       <SearchPanel :onDispatch="'searchInChat'" />
     </div>
-    <div v-if="true" @click="setNullChatId" class="header-item-chat__exit">
+    <div
+      v-if="isConnected"
+      @click="setNullChatId"
+      class="header-item-chat__exit"
+    >
       <span class="header-item-chat__exit_text"> Выход из диалога </span>
       <span class="header-item-chat__exit_icon">
         <svg width="22px" height="19px" viewBox="0 0 512 512">

@@ -2819,6 +2819,19 @@ body, html {
   overflow-y: scroll;
 }
 
+.info-close {
+  margin: 0 0 0 40px;
+  cursor: pointer;
+}
+
+.info-close path {
+  fill: #c3c3c3;
+}
+
+.info-close:hover path {
+  fill: url(#SVGID_2_);
+}
+
 .info.open {
   right: 2px;
 }

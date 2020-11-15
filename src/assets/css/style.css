@@ -1330,7 +1330,7 @@ body, html {
   display: flex;
 }
 
-.content-chat-content__date_checked {
+.content-chat-content__date.checked::after {
   width: 13px;
   height: 8px;
   background: url(../img/check.png) 0 0 no-repeat;
@@ -1731,6 +1731,14 @@ body, html {
   width: 13px;
   height: 8px;
   background: url(../img/notcheck.png) 0 0 no-repeat;
+  display: inline-block;
+  margin: 0 0 0 6px;
+}
+.checked::after {
+  content: '';
+  width: 13px;
+  height: 8px;
+  background: url(../img/check.png) 0 0 no-repeat;
   display: inline-block;
   margin: 0 0 0 6px;
 }

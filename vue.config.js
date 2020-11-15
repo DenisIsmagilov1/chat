@@ -1,3 +1,3 @@
 module.exports = {
-  // настройки...
+  // publicPath: '/chat_frontend/'
 }

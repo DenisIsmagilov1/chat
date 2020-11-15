@@ -9,8 +9,12 @@
     <div class="letters-chat__text" :class="{ visible: visible }">
       {{ folder.name }} ({{ count }})
     </div>
-    <div class="letters-chat__delete" :class="{ visible: visible }">
-      <img src="@/assets/img/cancel-22.png" alt="">
+    <div
+      @click.stop="deleteFolder"
+      class="letters-chat__delete"
+      :class="{ visible: !folder.program && visible }"
+    >
+      <img src="@/assets/img/cancel-22.png" alt="" />
     </div>
   </div>
 </template>
@@ -22,6 +26,9 @@ export default {
     setFolder() {
       this.$store.commit("setFolder", this.folder);
       this.$store.dispatch("fetchChatsRequest");
+    },
+    deleteFolder() {
+      this.$store.dispatch("deleteFolderRequest", this.folder.id);
     },
   },
 };

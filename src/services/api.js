@@ -246,6 +246,17 @@ class Api {
       }
     })
   }
+
+  deleteFolder(botref, folder_id) {
+    return axios.get(`${this.baseUrl}/rmfolder`, {
+      // ...this.settings,
+      params: {
+        botref,
+        folder_id
+      }
+    })
+  }
+
 }
 
 export default new Api()

@@ -79,10 +79,25 @@ export default {
 
         const response = await Api.linkFolder(botref, currentProgram, currentChatId, folder_id, unlink);
 
+        if (response.data.success) {
+          dispatch("fetchChatInfoRequest");
+          dispatch("fetchQtyFoldersRequest");
+        }
+
+      } catch (e) {
+        console.log(e)
+      }
+    },
+    async deleteFolderRequest({ dispatch, rootState }, folder_id) {
+      try {
+        const { botref } = rootState.meta;
+
+        const response = await Api.deleteFolder(botref, folder_id);
+
         console.log(response)
 
         if (response.data.success) {
-          dispatch("fetchChatInfoRequest");
+          dispatch("fetchFoldersRequest");
         }
 
       } catch (e) {

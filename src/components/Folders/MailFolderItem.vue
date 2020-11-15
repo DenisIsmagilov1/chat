@@ -1,6 +1,6 @@
 <template>
   <div @click="setFolder" class="letters-chat__item">
-    
+
     <div class="letters-chat__item_grey">
       <img :src="folder.img" alt="" />
     </div>

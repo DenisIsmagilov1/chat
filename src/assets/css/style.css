@@ -80,8 +80,6 @@ body, html {
 
 .wrapper {
   padding: 0;
-  margin: 0 10px 0 0;
-  
 }
 
 @media (max-width: 1180px) {
@@ -130,10 +128,10 @@ body, html {
   .chat__container {
     margin: 0 auto;
     max-width: 700px;
-    padding: 0 15px;
+    padding: 0 ;
   }
   .chat__container.pad {
-    padding: 0 15px;
+    padding: 0;
   }
 }
 
@@ -280,6 +278,7 @@ body, html {
 .letters-chat__item_round {
   margin-bottom: 15px;
   margin-left: 4px;
+  padding: 0 13px 0 0;
 }
 
 .letters-chat__item_svg path {
@@ -395,7 +394,7 @@ body, html {
     overflow-y: scroll;
   }
   .letters-chat.open {
-    left: 15px;
+    left: 0px;
   }
 }
 .list-chat__scroll {
@@ -484,6 +483,7 @@ body, html {
     background-image: linear-gradient(-160deg, #ee517c 0%, #6831a1 100%);
     border-radius: 10px 10px 0px 0px;
     padding: 0 10px;
+    border: none;
   }
   .header-list-chat__title {
     font-size: 13px;
@@ -524,18 +524,14 @@ body, html {
   padding: 0 0 0 9px;
 }
 
-.search__input_b input {
-  width: 283px;
-}
-
 .search__btn {
   color: transparent;
   background-color: transparent;
 }
 
 @media (max-width: 1400px) {
-  .search__input_b input {
-    width: 100px;
+  .search__input input {
+    width: 200px;
   }
 }
 
@@ -1425,7 +1421,6 @@ body, html {
 .content-chat-content__audio audio {
   width: 315px;
   height: 30px;
-  background-color: #ffffff;
   border-radius: 0;
   color: transparent;
   position: relative;
@@ -1433,6 +1428,15 @@ body, html {
 
 .content-chat-content__audio audio::-webkit-media-controls-panel {
   background-color: #ffffff;
+}
+.recipient .content-chat-content__audio  audio::-webkit-media-controls-panel {
+  background-color: #f1ffef;
+}
+.content-chat-content__nosend audio::-webkit-media-controls-panel {
+  background-color: #ffcdda;
+}
+.recipient .content-chat-content__nosend  audio::-webkit-media-controls-panel {
+  background-color: #ffcdda;
 }
 
 .content-chat-content__audio audio::-webkit-media-controls-play-button {
@@ -1451,6 +1455,8 @@ body, html {
   margin: 0 10px 0 0;
   padding: 0;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 
 .content-chat-content__audio audio.stop::-webkit-media-controls-play-button{
@@ -1461,7 +1467,6 @@ body, html {
 .content-chat-content__audio audio::-webkit-media-controls-current-time-display {
   position: absolute;
   right: 36px;
-  background-color: white;
   z-index: 6;
   font-size: 12px;
 }
@@ -1469,7 +1474,6 @@ body, html {
 .content-chat-content__audio audio::-webkit-media-controls-time-remaining-display {
   position: absolute;
   right: 0px;
-  background-color: white;
   z-index: 6;
   font-size: 12px;
 }
@@ -1481,7 +1485,10 @@ body, html {
 .content-chat-content__audio audio::-webkit-media-controls-timeline {
   max-width: 200px;
   padding: 0;
+  position: relative;
+  z-index: 2;
 }
+
 
 .content-chat-content__audio audio::-webkit-media-controls-volume-control-hover-background {
   display: none;
@@ -1830,6 +1837,7 @@ body, html {
 
 .popup-new {
   position: absolute;
+  z-index: 3;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -2010,6 +2018,7 @@ body, html {
   position: absolute;
   bottom: 66px;
   right: 10px;
+  z-index: 3;
   -webkit-box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
           box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
   border: 1px solid #e5e5e5;
@@ -2192,6 +2201,7 @@ body, html {
 
 .settings {
   position: absolute;
+  z-index: 3;
   left: 50%;
   top: 350px;
   -webkit-transform: translate(-50%, -50%);
@@ -3706,6 +3716,35 @@ body, html {
 .popup-new__templates_mobile{
   display: none;
 }
+
+.letters-chat__item:first-child {
+  margin-bottom: 15px;
+}
+
+.letters-chat__item:first-child .letters-chat__item_grey img {
+  width: 16px;
+  height: 16px;
+}
+
+.letters-chat__item:first-child .letters-chat__item_hover img {
+  width: 16px;
+  height: 16px;
+}
+.letters-chat__delete{
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.letters-chat__delete.visible{
+  opacity: 1;
+  visibility: visible;
+}
+.letters-chat__delete img{
+  width: 13px;
+  height: 13px;
+}
 @media (max-width: 1180px) {
   .search-2{
     display: none;
@@ -3726,5 +3765,14 @@ body, html {
   }
   .settings__header-mid{
     padding: 10px 0 0 20px;
+  }
+  .info-pad {
+    padding: 15px 10px;
+  }
+  .item-list-chat::before{
+    display: none;
+  }
+  .list-chat__scroll {
+    border-right: 2px solid #f1f2f3;
   }
 }

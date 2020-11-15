@@ -510,6 +510,7 @@ body, html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0 40px 0 0;
 }
 
 .search__input {
@@ -3579,7 +3580,7 @@ body, html {
   .close-search-1 {
     top: 0px;
     left: auto;
-    right: -9px;
+    right: 20px;
   }
 }
 

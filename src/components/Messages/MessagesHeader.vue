@@ -13,7 +13,7 @@
               vb: ['VB'].includes(currentChat.program),
             }"
           >
-            {{ program }}
+            {{ program.split(" ")[0] }}
           </span>
         </div>
       </span>

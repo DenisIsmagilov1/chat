@@ -9,6 +9,9 @@
     <div class="letters-chat__text" :class="{ visible: visible }">
       {{ folder.name }} ({{ count }})
     </div>
+    <div class="letters-chat__delete" :class="{ visible: visible }">
+      <img src="@/assets/img/cancel-22.png" alt="">
+    </div>
   </div>
 </template>
 

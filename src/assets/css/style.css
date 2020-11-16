@@ -137,9 +137,11 @@ body, html {
 
 
 .chat__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   max-width: 1269px;
   position: relative;
   height: calc(100vh);
@@ -181,9 +183,11 @@ body, html {
 }
 
 .letters-chat__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -192,9 +196,11 @@ body, html {
 
 .letters-chat__item {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -249,9 +255,11 @@ body, html {
 }
 
 .letters-chat__item_s {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -329,9 +337,11 @@ body, html {
 }
 
 .letters-chat__form.open {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -355,9 +365,11 @@ body, html {
 .letters-chat__btn {
   color: transparent;
   background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -396,9 +408,11 @@ body, html {
 }
 
 .header-list-chat {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -427,9 +441,11 @@ body, html {
 }
 
 .header-list-chat__icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -493,9 +509,11 @@ body, html {
 }
 
 .search__body.open {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
 }
 
 .search__input {
@@ -545,9 +563,11 @@ body, html {
 .item-list-chat {
   padding: 0 0 0 18px;
   height: 84px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   cursor: pointer;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -581,9 +601,11 @@ body, html {
 }
 
 .item-list-chat__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
 }
 
 .item-list-chat__line {
@@ -632,9 +654,11 @@ body, html {
 }
 
 .line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
 }
 
 .line__name {
@@ -676,9 +700,11 @@ body, html {
   min-height: 42px;
   background-color: #28a219;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -714,9 +740,11 @@ body, html {
   border: 2px solid #ffffff;
   background-color: #c44475;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -740,9 +768,11 @@ body, html {
   border: 2px solid #ffffff;
   background-color: #c44475;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -767,18 +797,22 @@ body, html {
 }
 
 .search__body-2.open {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
 }
 
 .header-item-chat {
   height: 44px;
   background-color: #ffffff;
   padding: 0 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -791,9 +825,11 @@ body, html {
 }
 
 .header-item-chat__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -833,9 +869,11 @@ body, html {
 }
 
 .header-item-chat__exit {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -899,9 +937,11 @@ body, html {
 .footer-chat-item {
   height: 68px;
   background-color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -911,16 +951,20 @@ body, html {
 }
 
 .footer-chat-item form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   width: 100%;
 }
 
 .footer-chat-item__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -931,9 +975,11 @@ body, html {
 }
 
 .footer-chat-item__flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -945,9 +991,11 @@ body, html {
   font-family: Montserrat;
   font-size: 13px;
   font-weight: 400;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -988,9 +1036,11 @@ body, html {
 }
 
 .footer-chat-item__input_template {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -1020,9 +1070,11 @@ body, html {
 }
 
 .footer-chat-item__icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1052,9 +1104,11 @@ body, html {
 }
 
 .footer-chat-item__templates {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1145,9 +1199,11 @@ body, html {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 933px;
           flex: 0 1 933px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1160,9 +1216,11 @@ body, html {
 }
 
 .start-chat__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1180,9 +1238,11 @@ body, html {
   height: 143px;
   border: 1px solid #c44475;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1218,9 +1278,11 @@ body, html {
   background-color: #e8ebed;
   width: 233px;
   height: 38px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1247,9 +1309,11 @@ body, html {
   overflow-y: scroll;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
@@ -1258,9 +1322,11 @@ body, html {
 
 .content-chat-content__message {
   padding: 10px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
 }
 
 .content-chat-content__message_search {
@@ -1269,9 +1335,11 @@ body, html {
 
 .content-chat-content__message_container {
   
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -1287,9 +1355,11 @@ body, html {
 }
 
 .content-chat-content__line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1312,9 +1382,11 @@ body, html {
   font-weight: 500;
   letter-spacing: 0.06px;
   padding: 0 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
 }
 
 .content-chat-content__date.checked::after {
@@ -1340,9 +1412,11 @@ body, html {
 }
 
 .content-chat-content__file {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1360,9 +1434,11 @@ body, html {
   width: 40px;
   height: 40px;
   background-color: rgba(219, 224, 228, 0.5);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1388,9 +1464,11 @@ body, html {
 }
 
 .content-chat-content__audio {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1493,9 +1571,11 @@ body, html {
   width: 32px;
   height: 32px;
   background-color: rgba(219, 224, 228, 0.5);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1511,9 +1591,11 @@ body, html {
   width: 32px;
   height: 32px;
   background-color: rgba(219, 224, 228, 0.5);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1734,9 +1816,11 @@ body, html {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 933px;
           flex: 0 1 933px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1750,9 +1834,11 @@ body, html {
 }
 
 .start-chat__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1770,9 +1856,11 @@ body, html {
   height: 143px;
   border: 1px solid #c44475;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1808,9 +1896,11 @@ body, html {
   background-color: #e8ebed;
   width: 233px;
   height: 38px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1862,9 +1952,11 @@ body, html {
 
 .popup-new__header {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1884,9 +1976,11 @@ body, html {
   background-color: #f6f6f6;
   width: 122px;
   height: 35px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1911,9 +2005,11 @@ body, html {
 }
 
 .popup-new__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -2035,9 +2131,11 @@ body, html {
 
 .templates__header {
   height: 56px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -2057,9 +2155,11 @@ body, html {
   position: relative;
 }
 .templates__search div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2090,9 +2190,11 @@ body, html {
 }
 
 .templates__line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2141,9 +2243,11 @@ body, html {
 
 .templates__btns {
   margin: 12px 0 0 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
 }
 
 .templates__btn {
@@ -2151,9 +2255,11 @@ body, html {
   height: 33px;
   border-radius: 3px;
   background-color: #dbe0e4;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2233,9 +2339,11 @@ body, html {
 
 .settings__header-top {
   height: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2258,9 +2366,11 @@ body, html {
 
 .settings__header-mid {
   height: 90px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2274,9 +2384,11 @@ body, html {
 
 .settings__header-bot {
   height: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2289,9 +2401,11 @@ body, html {
 }
 
 .settings__header-bot_line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   width: 283px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -2313,9 +2427,11 @@ body, html {
   font-size: 13px;
   font-weight: 500;
   color: #c44475;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2445,9 +2561,11 @@ body, html {
 }
 
 .new-templates__line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -2466,9 +2584,11 @@ body, html {
   border-radius: 8px;
   border: 1px solid #909090;
   background-color: #f6f6f6;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2539,9 +2659,11 @@ body, html {
 .new-templates__back {
   font-size: 13px;
   color: #777777;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2599,9 +2721,11 @@ body, html {
 
 .new-templates__btm {
   background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2659,9 +2783,11 @@ body, html {
 }
 
 .__select__title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2698,9 +2824,11 @@ body, html {
 .__select__content {
   position: absolute;
   top: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -2731,9 +2859,11 @@ body, html {
 }
 
 .__select__label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2757,9 +2887,11 @@ body, html {
 }
 
 .checkbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2911,9 +3043,11 @@ body, html {
 }
 
 .info__label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   margin-bottom: 30px;
   cursor: pointer;
 }
@@ -2925,9 +3059,11 @@ body, html {
 .info__label_icon {
   margin: 0 13px 0 0;
   width: 14px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2970,18 +3106,22 @@ body, html {
 }
 
 .info__checkbox_line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .info__checkbox_icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3049,9 +3189,11 @@ body, html {
 }
 
 .preview-chat__slider-big .slick-arrow {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   font-size: 0;
   position: absolute;
   top: 50%;
@@ -3078,9 +3220,11 @@ body, html {
 }
 
 .preview-chat__slider-big .slick-track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
 }
 
 .preview-chat__slider-big_item {
@@ -3100,9 +3244,11 @@ body, html {
 
 .preview-chat__slider-big_img {
   height: calc(100vh - 79px);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3148,9 +3294,11 @@ body, html {
   -webkit-box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
           box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
   background-color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -3160,15 +3308,19 @@ body, html {
 .preview-chat__slider-small {
   min-width: 0px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
 }
 
 .preview-chat__slider-small_item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3194,9 +3346,11 @@ body, html {
 .preview-chat__slider-small_item .slick-list {
   overflow: hidden;
   width: 690px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3209,9 +3363,11 @@ body, html {
 
 
 .preview-chat__slider-small_item .slick-track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -3248,9 +3404,11 @@ body, html {
   min-height: 58px;
   max-width: 56px;
   max-height: 58px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3397,9 +3555,11 @@ body, html {
   width: 66px;
   height: 66px;
   border: 2px solid #dbe0e4;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3442,9 +3602,11 @@ body, html {
 }
 
 .micro__line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -3455,9 +3617,11 @@ body, html {
   height: 35px;
   background-color: rgba(219, 224, 228, 0.5);
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3489,9 +3653,11 @@ body, html {
   height: 90px;
   right: 29px;
   bottom: 88px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -3504,16 +3670,20 @@ body, html {
 }
 
 .content-chat-content__arrows.open {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
 }
 
 .content-chat-content__arrows_item {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3549,9 +3719,11 @@ body, html {
   height: 18px;
   border: 2px solid #ffffff;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3590,9 +3762,11 @@ body, html {
 .content-chat-content__item_btns-body {
   border-top: 1px dotted rgba(0, 0, 0, 0.3);
   padding: 13px 0 0 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -3697,9 +3871,11 @@ body, html {
           align-items: center;
   color: #000000;
   font-size: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
   justify-content: center;
   align-items: center;
   border-left: 2px solid #f1f2f3;

@@ -2829,7 +2829,7 @@ body, html {
   position: absolute;
   top: 44px;
   width: 262px;
-  height: 690px;
+  height: calc(100% - 112px);
   background-color: #ffffff;
   padding: 12px 0 0 0px;
   right: -100%;
@@ -2853,7 +2853,7 @@ body, html {
 }
 
 .info.open {
-  right: 2px;
+  right: 0px;
 }
 
 .info__block {
@@ -3758,20 +3758,15 @@ body, html {
   .search-2{
     display: none;
   }
+  .header-item-chat__search{
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   .popup-new__templates_mobile{
     display: flex;
   }
-  .checkbox.active .checkbox__item::after{
-    right: -5px;
-  }
-  .checkbox__item_notcheck {
-    right: -3px;
-  }
-  .checkbox__item::after {
-    right: 6px;
-  }
+
   .settings__header-mid{
     padding: 10px 0 0 20px;
   }
@@ -3783,5 +3778,14 @@ body, html {
   }
   .list-chat__scroll {
     border-right: 2px solid #f1f2f3;
+  }
+  .info {
+    height: calc(100% - 146px);
+  }
+  .info__checkbox_item {
+    margin: 0 10px 0 0;
+  }
+  .info__checkbox_text {
+    max-width: 200px;
   }
 }

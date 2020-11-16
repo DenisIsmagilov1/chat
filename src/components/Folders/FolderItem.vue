@@ -9,17 +9,12 @@
     <div class="letters-chat__text" :class="{ visible: visible }">
       {{ folder.name }} ({{ count }})
     </div>
-<<<<<<< HEAD
-    <div class="letters-chat__delete" :class="{ visible: visible }">
-      <img src="@/assets/img/cancel-22.png" alt="">
-=======
     <div
       @click.stop="deleteFolder"
       class="letters-chat__delete"
       :class="{ visible: !folder.program && visible }"
     >
       <img src="@/assets/img/cancel-22.png" alt="" />
->>>>>>> 77c77936e76e5b7402f68df0aa3941642dbd02fd
     </div>
   </div>
 </template>

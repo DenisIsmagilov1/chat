@@ -3711,6 +3711,23 @@ body, html {
   align-items: center;
   border-left: 2px solid #f1f2f3;
   border-radius: 0 0 0 10px;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.no-chats__icon {
+  margin-bottom: 15px;
+}
+.no-chats__icon path {
+  fill: #c3c3c3;
+}
+.no-chats__text{
+  font-size: 13px;
+  font-weight: 500;
+  color: #777777;
+  line-height: 23px;
+  max-width: 145px;
+  margin: 0 auto;
+  text-align: center;
 }
 .footer-chat-item__input::before{
   content: '';

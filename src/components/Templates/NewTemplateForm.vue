@@ -47,11 +47,13 @@
           <span> Изображение</span>
         </div>
       </div>
-      <div class="templates__item new-templates__item">
-        <div class="new-templates__image">
-          <img v-if="imageUrl" :src="imageUrl" alt="" />
+      <div class="new-templates__wrapper">
+        <div class="templates__item new-templates__item">
+          <div class="new-templates__image">
+            <img v-if="imageUrl" :src="imageUrl" alt="" />
+          </div>
+          {{ templateText }}
         </div>
-        {{ templateText }}
       </div>
       <div class="new-templates__line new-templates__line_end">
         <div @click="toggleNewFormOpen" class="new-templates__back">Назад</div>

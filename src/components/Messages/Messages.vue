@@ -9,7 +9,6 @@
     <MessagesHeader />
     <MessagesList />
     <MessagesFooter />
-    <TemplateListPopup />
     <ChatInfo />
   </div>
 </template>

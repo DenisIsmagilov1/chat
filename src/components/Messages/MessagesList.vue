@@ -55,6 +55,7 @@ export default {
       afterFirstScroll: false,
       updateInterval: null,
       lazyLoading: false,
+      scrollBottom: false,
     };
   },
   components: {
@@ -74,6 +75,9 @@ export default {
     },
     countPrev() {
       return this.$store.state.meta.indexMessage;
+    },
+    freshMessageId() {
+      return this.$store.state.messages.freshMessageId;
     },
   },
   methods: {
@@ -136,12 +140,18 @@ export default {
 
       let elem = this.$el;
       elem.scrollTop = -scroll;
-    } else if (!this.lazyLoading) {
+    } else if (this.scrollBottom) {
       let elem = this.$el;
       elem.scrollTop = elem.scrollHeight;
+      this.scrollBottom = false;
     }
     this.lazyLoading = false;
     this.updateInterval = this.setIntervalUpdate();
+  },
+  watch: {
+    freshMessageId() {
+      this.scrollBottom = true;
+    },
   },
 };
 </script>

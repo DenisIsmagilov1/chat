@@ -11,6 +11,9 @@ export default {
     addChats(state, chats) {
       state.chats = chats
     },
+    concatChats(state, chats) {
+      state.chats.concat(chats)
+    },
     addChat(state, newChat) {
       state.chats.push(newChat)
     },
@@ -106,7 +109,7 @@ export default {
         })
 
         if (sosChats || chats.data.unread) {
-          commit('addChats', [...sosChats, ...chats.data.unread])
+          commit('concatChats', [...sosChats, ...chats.data.unread])
         }
 
       } catch (e) {

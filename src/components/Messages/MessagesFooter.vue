@@ -5,16 +5,16 @@
   >
     <div class="footer-chat-item__body">
       <form @submit.prevent="createMessage" action="">
-        <div class="footer-chat-item__input">
+        <div @keydown.enter="pressEnter" class="footer-chat-item__input">
           <textarea-autosize
-            @keydown.enter="pressEnter"
+            @keydown="pressEnter"
             v-if="!template"
             v-model="text"
             name=""
             id="textarea"
             ref="text"
             :min-height="16"
-            :max-height="45"
+            :max-height="200"
             placeholder="Введите сообщение"
           />
           <div v-else class="footer-chat-item__input_template">
@@ -25,7 +25,10 @@
               {{ template.text }}
             </div>
           </div>
-          <button @click="createMessage" class="footer-chat-item__button active">
+          <button
+            @click="createMessage"
+            class="footer-chat-item__button active"
+          >
             <svg width="22px" height="19px" viewBox="0 0 512 512">
               <linearGradient
                 id="SVGID_3_"
@@ -113,9 +116,10 @@ export default {
     },
   },
   methods: {
-    createMessage(event) {
-      event.preventDefault();
+    createMessage() {
       this.$store.dispatch("sendMessage");
+      this.$store.commit("setSendedMessage", true);
+      setTimeout(() => this.$store.commit("setSendedMessage", false), 500);
     },
     toggleTemplateListPopup() {
       this.$store.commit("openPopup", "templates");
@@ -126,13 +130,13 @@ export default {
     },
     pressEnter(event) {
       if (this.$store.state.options.enterSendMessage) {
-        event.preventDefault();
         if (event.key === "Enter" && event.shiftKey) {
-          this.text = this.text + "\n";
+          // this.text = this.text + "\n";
         } else if (event.key === "Enter") {
+          this.text = this.text.trimRight();
           this.createMessage();
         }
-        this.$refs.text.focus();
+        this.$refs.text.$el.focus();
       }
     },
   },

@@ -36,10 +36,11 @@
           />
         </div>
         <div class="new-templates__input new-templates__input_2">
-          <input
+          <textarea-autosize
             v-model="templateText"
-            type="text"
             placeholder="Введите текст шаблона..."
+            :min-height="1"
+            :max-height="100"
           />
         </div>
         <div class="new-templates__frame new-templates__frame_mobile">

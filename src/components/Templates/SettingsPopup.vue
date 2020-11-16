@@ -42,12 +42,15 @@
       </form>
     </div>
     <div class="settings__header-bot">
-      <div class="settings__header-bot_line">
-        <div class="settings__header-bot_title">Ваши шаблоны</div>
+      <div class="settings__header-bot_line" :class="{ search: openSearch }">
+        <div class="settings__header-bot_title" :class="{ search: openSearch }">
+          Ваши шаблоны
+        </div>
         <div
           v-if="!newFormOpen"
           @click="toggleNewFormOpen"
           class="settings__header-bot_new-templates new-templates-open"
+          :class="{ search: openSearch }"
         >
           <svg x="0px" y="0px" width="18px" height="18px" viewBox="0 0 512 512">
             <linearGradient
@@ -73,6 +76,7 @@
         v-if="!newFormOpen"
         action=""
         class="templates__search templates__search-1"
+        :class="{ open: openSearch }"
       >
         <div>
           <input
@@ -80,10 +84,18 @@
             type="text"
             placeholder="Поиск по названию..."
           />
-          <img src="@/assets/img/search.png" alt="" />
+          <img
+            @click="setOpenSearch(true)"
+            src="@/assets/img/search.png"
+            alt=""
+          />
         </div>
-        <span class="templates__search_close">
-          <img src="@/assets/img/cancel-22.png" alt="">
+        <span
+          @click="setOpenSearch(false)"
+          class="templates__search_close"
+          :class="{ open: openSearch }"
+        >
+          <img src="@/assets/img/cancel-22.png" alt="" />
         </span>
       </form>
     </div>
@@ -125,6 +137,7 @@ export default {
     return {
       newFormOpen: false,
       searchString: "",
+      openSearch: false,
     };
   },
   components: {
@@ -154,6 +167,12 @@ export default {
     },
     toggleEnterPress() {
       this.$store.commit("toggleEnterSendMessage");
+    },
+    setOpenSearch(bool) {
+      this.openSearch = bool;
+      if (!bool) {
+        this.searchString = "";
+      }
     },
   },
 };

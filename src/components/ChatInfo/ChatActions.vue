@@ -1,5 +1,8 @@
 <template>
   <div v-if="$store.state.meta.chatInfo" class="info__block">
+    <div v-if="showSuccessCopy" class="info__label-copy">
+      Ссылка скопирована
+    </div>
     <div @click="copyToClipboard" class="info__label">
       <span class="info__label_icon">
         <img src="@/assets/img/link.png" alt="" />
@@ -28,10 +31,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      showSuccessCopy: false,
+    };
+  },
   methods: {
     copyToClipboard() {
       const link = this.$store.state.meta.chatInfo.public_address;
       navigator.clipboard.writeText(link);
+      this.showSuccessCopy = true;
+      setTimeout(() => (this.showSuccessCopy = false), 3000);
     },
     toggleBanChat() {
       this.$store.dispatch("toggleBanChatRequest");

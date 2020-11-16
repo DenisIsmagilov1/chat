@@ -12,18 +12,32 @@
       <img src="@/assets/img/cancel-22.png" alt="" />
     </div>
     <div class="templates__header">
-      <div class="templates__title">Ваши шаблоны</div>
-      <form action="" class="templates__search templates__search-2">
+      <div class="templates__title" :class="{ search: openSearch }">
+        Ваши шаблоны
+      </div>
+      <form
+        action=""
+        class="templates__search templates__search-2"
+        :class="{ open: openSearch }"
+      >
         <div>
           <input
             v-model="searchString"
             type="text"
             placeholder="Поиск по названию..."
           />
-          <img src="@/assets/img/search.png" alt="" />
+          <img
+            @click="setOpenSearch(true)"
+            src="@/assets/img/search.png"
+            alt=""
+          />
         </div>
-        <span class="templates__search_close">
-          <img src="@/assets/img/cancel-22.png" alt="">
+        <span
+          @click="setOpenSearch(false)"
+          class="templates__search_close"
+          :class="{ open: openSearch }"
+        >
+          <img src="@/assets/img/cancel-22.png" alt="" />
         </span>
       </form>
     </div>
@@ -45,6 +59,7 @@ export default {
   data() {
     return {
       searchString: "",
+      openSearch: false,
     };
   },
   components: {
@@ -64,6 +79,12 @@ export default {
         this.$store.commit("toggleNewChatTemplatePopup");
       } else {
         this.$store.commit("closePopups");
+      }
+    },
+    setOpenSearch(bool) {
+      this.openSearch = bool;
+      if (!bool) {
+        this.searchString = "";
       }
     },
   },

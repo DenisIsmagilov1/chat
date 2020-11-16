@@ -62,9 +62,10 @@ export default {
       return null
     },
     nickname(state) {
-      if (state.options.options) {
+      if (state.options.operator_profile) {
         return (
-          state.options.options.operator_profile.nickname ||
+          state.options.operator_profile.nickname ||
+          state.options.operator_profile.login ||
           "Noname"
         );
       }

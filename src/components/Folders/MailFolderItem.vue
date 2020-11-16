@@ -1,6 +1,5 @@
 <template>
-  <div @click="setFolder" class="letters-chat__item">
-    
+  <div :title="folder.name" @click="setFolder" class="letters-chat__item">
     <div class="letters-chat__item_grey">
       <img :src="folder.img" alt="" />
     </div>
@@ -19,6 +18,7 @@ export default {
   methods: {
     setFolder() {
       this.$store.commit("setFolder", this.folder);
+      this.$store.dispatch("leaveChat");
       if (this.folder.type === "read") {
         this.$store.dispatch("fetchChatsRequest");
       } else if (this.folder.type === "unread") {

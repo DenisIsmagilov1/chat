@@ -10,7 +10,7 @@
       <div
         v-if="!searchOpen && visibleExitButton"
         @click="exitChat"
-        class="header-list-chat__icon"
+        class="header-list-chat__icon leave-mobile"
       >
         <svg viewBox="0 0 448 512" width="15px" height="15px">
           <path

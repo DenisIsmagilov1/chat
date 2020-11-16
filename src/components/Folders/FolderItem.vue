@@ -1,5 +1,9 @@
 <template>
-  <div @click="setFolder" class="letters-chat__item letters-chat__item_round">
+  <div
+    :title="folder.name"
+    @click="setFolder"
+    class="letters-chat__item letters-chat__item_round"
+  >
     <div v-if="folder.img" class="letters-chat__item_s">
       <img :src="folder.img" alt="" />
     </div>
@@ -26,6 +30,7 @@ export default {
     setFolder() {
       this.$store.commit("setFolder", this.folder);
       this.$store.dispatch("fetchChatsRequest");
+      this.$store.dispatch("leaveChat");
     },
     deleteFolder() {
       this.$store.dispatch("deleteFolderRequest", this.folder.id);

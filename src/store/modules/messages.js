@@ -12,6 +12,7 @@ export default {
     files: [],
     messages: [],
     needUpdate: true,
+    sendedMessage: false
   },
   mutations: {
     setMessages(state, messages) {
@@ -58,6 +59,9 @@ export default {
     },
     setReadStatus(state) {
       state.messages[0].status = "seen"
+    },
+    setSendedMessage(state, bool) {
+      state.sendedMessage = bool;
     }
   },
   actions: {
@@ -161,20 +165,22 @@ export default {
     },
     async sendMessage({ dispatch, commit, state, rootState }) {
       try {
-        const { botref, currentChatId, currentProgram } = rootState.meta;
-        const { text, files, templateId } = state;
-
-        const response = await Api.sendMessage(botref, currentProgram, currentChatId, text, files, templateId);
-        commit('closePopups');
-        console.log(response)
-        if (response.data.success) {
-          dispatch('updateMessages')
+        if (!state.sendedMessage) {
+          const { text, files, templateId } = state;
           commit("updateText", '')
-          commit("setFiles", [])
-          commit("setTemplateId", null)
-          commit("setConnected")
-        }
+          const { botref, currentChatId, currentProgram } = rootState.meta;
 
+          const response = await Api.sendMessage(botref, currentProgram, currentChatId, text, files, templateId);
+
+          commit('closePopups');
+          console.log(response)
+          if (response.data.success) {
+            dispatch('updateMessages')
+            commit("setFiles", [])
+            commit("setTemplateId", null)
+            commit("setConnected")
+          }
+        }
       } catch (e) {
         console.log(e)
       }

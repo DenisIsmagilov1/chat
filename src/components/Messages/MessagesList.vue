@@ -128,6 +128,7 @@ export default {
   },
   updated() {
     this.$store.dispatch("resetUnreadMessages");
+    this.$store.dispatch("unreadMessagesRequest");
     this.afterFirstScroll = false;
     if (this.$store.state.meta.search && this.$refs.searched) {
       const { offsetTop } = this.$refs.searched[0].$el;

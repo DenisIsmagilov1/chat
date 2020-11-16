@@ -12,7 +12,7 @@ export default {
       state.chats = chats
     },
     concatChats(state, chats) {
-      state.chats.concat(chats)
+      state.chats = state.chats.concat(chats)
     },
     addChat(state, newChat) {
       state.chats.push(newChat)
@@ -108,7 +108,7 @@ export default {
           }
         })
 
-        if (sosChats || chats.data.unread) {
+        if (sosChats.length || chats.data.unread.length) {
           commit('concatChats', [...sosChats, ...chats.data.unread])
         }
 
@@ -218,8 +218,15 @@ export default {
     chatsLength(state) {
       return state.chats.length
     },
-    getSortChats(state) {
-      return [...state.chats].sort((mess1, mess2) => {
+    getSortChats(state, rootGetter, rootState) {
+      let chats;
+      if (rootState.meta.currentFolder.type === "read") {
+        chats = [...state.chats].filter(chat => chat.unread_msg_count === 0);
+      } else {
+        chats = [...state.chats];
+      }
+
+      return chats.sort((mess1, mess2) => {
         if (mess1.searched) {
           return -1
         } else if (mess2.searched) {

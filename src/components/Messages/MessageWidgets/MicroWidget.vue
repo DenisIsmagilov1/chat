@@ -10,9 +10,9 @@
       class="micro__two-item"
       :class="{ open: isRecording || this.recordList.length }"
     >
-      <a v-if="recordList.length" :href="recordList[0].url" download
+      <!-- <a v-if="recordList.length" :href="recordList[0].url" download
         >download</a
-      >
+      > -->
       <div class="micro__timer">{{ getTime }}</div>
       <div
         @click="stopRecorder"

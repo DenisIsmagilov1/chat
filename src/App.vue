@@ -9,6 +9,13 @@
           <Messages v-else />
           <FilesPopup />
         </div>
+        <NewChatPopup />
+        <TemplateListPopup />
+        <TemplateListPopup
+          :writeFirst="true"
+          v-if="$store.state.meta.newChatTemplatePopup"
+        />
+        <SettingsPopup />
       </div>
     </div>
   </div>
@@ -20,7 +27,9 @@ import ChatList from "./components/ChatList/ChatList";
 import Messages from "./components/Messages/Messages";
 import FilesPopup from "./components/Messages/MessageWidgets/FilesWidget/FilesPopup";
 import StartPage from "./components/StartPage";
-
+import NewChatPopup from "./components/ChatList/NewChatPopup";
+import TemplateListPopup from "./components/Templates/TemplateListPopup";
+import SettingsPopup from "./components/Templates/SettingsPopup";
 export default {
   components: {
     LeftBar,
@@ -28,6 +37,9 @@ export default {
     Messages,
     FilesPopup,
     StartPage,
+    NewChatPopup,
+    TemplateListPopup,
+    SettingsPopup,
   },
   computed: {
     folderIsOpen() {

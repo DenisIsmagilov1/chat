@@ -46,7 +46,6 @@
 import ChatListHeader from "./ChatListHeader";
 import ChatListItem from "./ChatListItem";
 import ChatLoader from "../loaders/ChatLoader";
-
 export default {
   data() {
     return {

@@ -29,22 +29,13 @@
         Начните новый диалог
       </div>
     </div>
-    <NewChatPopup />
-    <TemplateListPopup
-      writeFirst="true"
-      v-if="$store.state.meta.newChatTemplatePopup"
-    />
   </div>
 </template>
 
 <script>
-import NewChatPopup from "./ChatList/NewChatPopup";
-import TemplateListPopup from "./Templates/TemplateListPopup";
 
 export default {
   components: {
-    NewChatPopup,
-    TemplateListPopup,
   },
   methods: {
     toggleNewChatPopup() {

@@ -9,14 +9,8 @@
     <MessagesHeader />
     <MessagesList />
     <MessagesFooter />
-    <NewChatPopup />
     <TemplateListPopup />
-    <TemplateListPopup
-      :writeFirst="true"
-      v-if="$store.state.meta.newChatTemplatePopup"
-    />
     <ChatInfo />
-    <SettingsPopup />
   </div>
 </template>
 
@@ -24,9 +18,6 @@
 import MessagesHeader from "./MessagesHeader";
 import MessagesList from "./MessagesList";
 import MessagesFooter from "./MessagesFooter";
-import NewChatPopup from "../ChatList/NewChatPopup";
-import TemplateListPopup from "../Templates/TemplateListPopup";
-import SettingsPopup from "../Templates/SettingsPopup";
 import ChatInfo from "../ChatInfo/ChatInfo";
 import ChatListHeader from "../ChatList/ChatListHeader";
 
@@ -35,9 +26,6 @@ export default {
     MessagesHeader,
     MessagesList,
     MessagesFooter,
-    NewChatPopup,
-    TemplateListPopup,
-    SettingsPopup,
     ChatInfo,
     ChatListHeader,
   },

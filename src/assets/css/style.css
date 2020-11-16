@@ -543,7 +543,7 @@ body, html {
     border-bottom: 1px solid #ffffff;
   }
   .search__input input {
-    width: 280px;
+    width: 256px;
     background-color: transparent;
     color: #ffffff;
   }
@@ -1849,9 +1849,9 @@ body, html {
   position: absolute;
   z-index: 3;
   top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: calc(333px + 50%);
+  -webkit-transform: translate(calc(333px + 50%), -50%);
+          transform: translate(calc(-166px - 50%), -50%);
   visibility: hidden;
   opacity: 0;
   -webkit-transition: 0.3s ease;
@@ -2004,7 +2004,7 @@ body, html {
 .templates-2 {
   right: auto;
   bottom: auto;
-  left: 60px;
+  left: 420px;
   top: 50%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
@@ -2212,10 +2212,10 @@ body, html {
 .settings {
   position: absolute;
   z-index: 3;
-  left: 50%;
-  top: 350px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  top: 50%;
+  left: calc(333px + 50%);
+  -webkit-transform: translate(calc(333px + 50%), -50%);
+          transform: translate(calc(-166px - 50%), -50%);
   width: 100%;
   max-width: 576px;
   height: calc(100vh - 140px);
@@ -2449,6 +2449,7 @@ body, html {
   padding: 20px 26px;
   height: calc(100% - 190px);
   position: relative;
+  overflow-y: scroll;
 }
 
 .new-templates__line {
@@ -3777,6 +3778,17 @@ body, html {
   }
   .header-item-chat__search{
     display: none;
+  }
+  .popup-new {
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .settings {
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .templates-2 {
+    left: 60px;
   }
 }
 @media (max-width: 767px) {

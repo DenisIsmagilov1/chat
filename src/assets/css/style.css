@@ -200,24 +200,10 @@ body, html {
           align-items: center;
 }
 
-.letters-chat__item:first-child {
-  margin-bottom: 15px;
+.letters-chat__item:nth-child(3) {
   margin-left: 1.5px;
 }
 
-.letters-chat__item:first-child .letters-chat__item_svg {
-  margin-right: 15px;
-  width: 16px;
-  height: 16px;
-}
-
-.letters-chat__item:first-child path {
-  fill: #c3c3c3;
-}
-
-.letters-chat__item:first-child:hover path {
-  fill: url(#SVGID_1_);
-}
 
 .letters-chat__item:first-child .letters-chat__text {
   color: #222222;
@@ -3751,15 +3737,15 @@ body, html {
 }
 
 .letters-chat__item:first-child {
-  margin-bottom: 15px;
+  margin-bottom: 13px;
 }
 
-.letters-chat__item:first-child .letters-chat__item_grey img {
+.letters-chat__item:nth-child(3) .letters-chat__item_grey img {
   width: 16px;
   height: 16px;
 }
 
-.letters-chat__item:first-child .letters-chat__item_hover img {
+.letters-chat__item:nth-child(3) .letters-chat__item_hover img {
   width: 16px;
   height: 16px;
 }

@@ -543,7 +543,7 @@ body, html {
     border-bottom: 1px solid #ffffff;
   }
   .search__input input {
-    width: 100%;
+    width: 280px;
     background-color: transparent;
     color: #ffffff;
   }
@@ -2335,7 +2335,7 @@ body, html {
 
 .settings__item {
   padding: 23px 15px;
-  height: 100%;
+  height: calc(100% - 190px);
   overflow-y: scroll;
 }
 
@@ -2447,7 +2447,7 @@ body, html {
 
 .new-templates__body {
   padding: 20px 26px;
-  height: 100%;
+  height: calc(100% - 190px);
   position: relative;
 }
 

@@ -82,6 +82,9 @@
           />
           <img src="@/assets/img/search.png" alt="" />
         </div>
+        <span class="templates__search_close">
+          <img src="@/assets/img/cancel-22.png" alt="">
+        </span>
       </form>
     </div>
     <div v-if="!newFormOpen" class="settings__item">

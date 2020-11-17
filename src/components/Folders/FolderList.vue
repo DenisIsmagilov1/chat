@@ -56,6 +56,7 @@ export default {
   mounted() {
     this.$store.dispatch("fetchFoldersRequest");
     this.$store.dispatch("fetchQtyFoldersRequest");
+    setInterval(() => this.$store.dispatch("fetchQtyFoldersRequest"), 5000);
   },
 };
 </script>

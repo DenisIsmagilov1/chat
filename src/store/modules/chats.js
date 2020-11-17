@@ -220,7 +220,7 @@ export default {
     },
     getSortChats(state, rootGetter, rootState) {
       let chats;
-      if (rootState.meta.currentFolder.type === "read") {
+      if (!rootState.meta.search && rootState.meta.currentFolder.type === "read") {
         chats = [...state.chats].filter(chat => chat.unread_msg_count === 0);
       } else {
         chats = [...state.chats];

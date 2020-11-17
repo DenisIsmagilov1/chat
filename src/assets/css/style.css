@@ -2649,7 +2649,7 @@ display: flex;
   height: calc(100% - 35px);
 }
 .new-templates__wrapper{
-  height: 55%;
+  height: 163px;
 }
 
 .new-templates__input {
@@ -2674,7 +2674,6 @@ display: flex;
   padding: 0 0 10px 13px;
   resize: none;
 }
-
 .new-templates__input:first-child {
   margin-bottom: 30px;
 }
@@ -2686,9 +2685,10 @@ display: flex;
 .new-templates__item {
   width: 100%;
   padding: 11px 12px;
-  max-height: 180px;
+  max-height: 163px;
   overflow-y: scroll; 
   max-width: 100%;
+  word-break: break-all; 
 }
 
 .new-templates__back {

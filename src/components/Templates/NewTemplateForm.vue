@@ -40,7 +40,7 @@
             v-model="templateText"
             placeholder="Введите текст шаблона..."
             :min-height="1"
-            :max-height="100"
+            :max-height="43"
           />
         </div>
         <div class="new-templates__frame new-templates__frame_mobile">

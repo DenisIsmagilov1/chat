@@ -22,6 +22,7 @@
         </svg>
       </div>
       <SearchPanel
+        v-if="!mobile"
         :toggleOuterOpen="toggleSearchOpen"
         :allSearch="true"
         :onDispatch="'searchAllChats'"

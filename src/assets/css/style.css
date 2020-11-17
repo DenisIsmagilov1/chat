@@ -548,7 +548,6 @@ display: flex;
   .search__input input {
     width: 256px;
     background-color: transparent;
-    color: #ffffff;
   }
   .search__body {
     width: 100%;
@@ -4035,7 +4034,7 @@ display: flex;
     display: none;
   }
   .header-item-chat__search{
-    display: none;
+    
   }
   .popup-new {
     left: 50%;

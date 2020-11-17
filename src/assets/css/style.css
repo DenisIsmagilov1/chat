@@ -3503,6 +3503,8 @@ display: flex;
 .preview-chat__button {
   margin: 0 25px 0 0;
   background-color: transparent;
+  position: relative;
+  z-index: 2;
 }
 
 .preview-chat__close {
@@ -3554,7 +3556,23 @@ display: flex;
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
 }
-
+  @media (max-width: 1180px) {
+    .smile .smile-item {
+      top: -251px;
+      left: -185px;
+    }
+  }
+  @media (max-width: 767px) {
+    .smile .smile-item {
+      top: -238px;
+      left: -90px;
+    }
+  }
+  @media (max-width: 500px) {
+    .smile .smile-item {
+      width: 290px;
+    }
+  }
 .emoji {
   display: inline-flex;
   justify-content: center;
@@ -3655,7 +3673,16 @@ display: flex;
   font-size: 12px;
   height: 12px;
 }
-
+@media (max-width: 1180px) {
+  .micro__two-item {
+    top: -168px;
+    left: -68px;
+  }
+  .micro__first-item {
+    top: -168px;
+    left: -68px;
+  }
+}
 .micro__line {
 display: -webkit-box;
 display: -moz-box;
@@ -3700,7 +3727,7 @@ display: flex;
 }
 
 .micro__btn path {
-  fill: url(#SVGID_1_);
+  fill: url(#SVGID_3_);
 }
 
 .content-chat-content__arrows {

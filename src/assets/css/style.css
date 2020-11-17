@@ -947,6 +947,7 @@ display: flex;
   border: 2px solid #f1f2f3;
   border-radius: 0px 0 10px 0px;
   padding: 15px 25px 15px 35px;
+  max-height: 220px;
 }
 
 .footer-chat-item form {
@@ -1149,7 +1150,6 @@ display: flex;
 @media (max-width: 767px) {
   .footer-chat-item {
     padding: 22px 25px 22px 35px;
-    height: 104px;
   }
   .footer-chat-item__body {
     -webkit-box-orient: vertical;

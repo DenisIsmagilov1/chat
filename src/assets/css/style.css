@@ -1328,11 +1328,7 @@ display: flex;
 
 .content-chat-content__message {
   padding: 10px 0;
-display: -webkit-box;
-display: -moz-box;
-display: -ms-flexbox;
-display: -webkit-flex;
-display: flex;
+
 }
 
 .content-chat-content__message_search {

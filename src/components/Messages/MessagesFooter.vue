@@ -24,6 +24,9 @@
             <div class="footer-chat-item__input_text">
               {{ template.text }}
             </div>
+            <div class="footer-chat-item__input_close">
+              <img src="@/assets/img/cancel-22.png" alt="">
+            </div>
           </div>
           <button
             @click="createMessage"

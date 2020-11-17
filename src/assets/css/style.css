@@ -1040,12 +1040,18 @@ display: -webkit-box;
 display: -moz-box;
 display: -ms-flexbox;
 display: -webkit-flex;
+width: 100%;
 display: flex;
+position: relative;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
-
+.footer-chat-item__input_close{
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
 .footer-chat-item__input_img {
   max-width: 54px;
   max-height: 38px;
@@ -1061,7 +1067,8 @@ display: flex;
 }
 
 .footer-chat-item__input_text {
-  width: 486px;
+  max-width: 500px;
+  width: 100%;
   font-size: 13px;
   color: #222222;
   line-height: 16px;

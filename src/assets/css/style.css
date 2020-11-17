@@ -1730,17 +1730,11 @@ display: flex;
   .content-chat-content audio {
     width: 200px;
   }
-  .content-chat-content audio::-webkit-media-controls-timeline {
-    max-width: 120px;
-  }
-  .content-chat-content audio::-webkit-media-controls-current-time-display {
-    right: 0px;
-  }
   .content-chat-content .content-chat-content__item_audio {
     padding: 11px 15px 11px 5px;
   }
   .content-chat-content__item {
-    max-width: 200px;
+    max-width: 220px;
   }
 }
 
@@ -3549,11 +3543,11 @@ display: flex;
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
   position: absolute;
-  top: -185px;
+  top: -385px;
   left: -85px;
   padding: 21px 17px;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }

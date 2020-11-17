@@ -4,7 +4,8 @@
     :class="{ 'header-list-chat-mobile': mobile }"
   >
     <div v-if="!searchOpen" class="header-list-chat__title">
-      Ваши диалоги <span>({{ chatsLength() }})</span>
+      {{ folderName }}
+      <span>({{ chatsLength() }})</span>
     </div>
     <div class="header-list-chat__icons">
       <div
@@ -144,6 +145,13 @@ export default {
         this.$store.state.meta.currentProgram &&
         this.$store.state.meta.currentChatId
       );
+    },
+    folderName() {
+      const name = this.$store.state.meta.currentFolder.name;
+      if (name.length > 15) {
+        return name.slice(0, 15) + "...";
+      }
+      return name;
     },
   },
   methods: {

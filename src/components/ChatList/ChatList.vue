@@ -28,9 +28,7 @@
             />
           </svg>
         </div>
-        <div class="no-chats__text">
-          В данной папке нет ни одного диалога 
-        </div>
+        <div class="no-chats__text">В данной папке нет ни одного диалога</div>
       </div>
       <ChatListItem
         v-else

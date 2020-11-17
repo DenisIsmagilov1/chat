@@ -11,7 +11,7 @@
       <img src="@/assets/img/group_1_копия.png" alt="" />
     </div>
     <div class="letters-chat__text" :class="{ visible: visible }">
-      {{ folder.name }} ({{ count }})
+      {{ folderName }} ({{ count }})
     </div>
     <div
       @click.stop="deleteFolder"
@@ -26,6 +26,15 @@
 <script>
 export default {
   props: ["folder", "visible", "count"],
+  computed: {
+    folderName() {
+      const name = this.folder.name;
+      if (name.length > 12) {
+        return name.slice(0, 12) + "...";
+      }
+      return name;
+    },
+  },
   methods: {
     setFolder() {
       this.$store.commit("setFolder", this.folder);

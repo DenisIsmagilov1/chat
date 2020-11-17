@@ -84,23 +84,26 @@ export default {
       return firtsChar;
     },
     textMessage() {
-      if (this.item.last_msg_text.length < 20) {
-        return this.item.last_msg_text;
-      } else {
+      if (this.item.last_msg_text && this.item.last_msg_text.length > 20) {
         return this.item.last_msg_text.slice(0, 20) + "...";
+      } else {
+        return this.item.last_msg_text;
       }
     },
     login() {
-      if (this.item.profile.login.length < 12) {
-        return this.item.profile.login;
+      if (this.item.profile.login && this.item.profile.login.length > 12) {
+        return this.item.profile.login.slice(0, 12) + "...";
       }
-      return this.item.profile.login.slice(0, 12) + "...";
+      return this.item.profile.login;
     },
     nickname() {
-      if (this.item.profile.nickname.length < 20) {
-        return this.item.profile.nickname;
+      if (
+        this.item.profile.nickname &&
+        this.item.profile.nickname.length > 20
+      ) {
+        return this.item.profile.nickname.slice(0, 20) + "...";
       }
-      return this.item.profile.nickname.slice(0, 20) + "...";
+      return this.item.profile.nickname;
     },
   },
   methods: {

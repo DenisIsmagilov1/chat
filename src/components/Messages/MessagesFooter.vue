@@ -24,8 +24,8 @@
             <div class="footer-chat-item__input_text">
               {{ template.text }}
             </div>
-            <div class="footer-chat-item__input_close">
-              <img src="@/assets/img/cancel-22.png" alt="">
+            <div @click="nullTemplateId" class="footer-chat-item__input_close">
+              <img src="@/assets/img/cancel-22.png" alt="" />
             </div>
           </div>
           <button
@@ -41,8 +41,8 @@
                 x2="444.3639"
                 y2="-2.6542"
               >
-                <stop offset="0" style="stop-color: #5D2C91" />
-                <stop offset="1" style="stop-color: #D6496F" />
+                <stop offset="0" style="stop-color: #5d2c91" />
+                <stop offset="1" style="stop-color: #d6496f" />
               </linearGradient>
               <path
                 fill="url(#SVGID_3_)"
@@ -141,6 +141,9 @@ export default {
         }
         this.$refs.text.$el.focus();
       }
+    },
+    nullTemplateId() {
+      this.$store.commit("nullTemplateId");
     },
   },
 };

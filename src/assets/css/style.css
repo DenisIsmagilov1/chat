@@ -1051,6 +1051,7 @@ position: relative;
   position: absolute;
   right: 20px;
   top: 0;
+  cursor: pointer;
 }
 .footer-chat-item__input_img {
   max-width: 54px;

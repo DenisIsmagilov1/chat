@@ -51,6 +51,9 @@ export default {
         state.templateId = id;
       }
     },
+    nullTemplateId(state) {
+      state.templateId = null;
+    },
     updateText(state, text) {
       state.text = text;
     },

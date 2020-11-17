@@ -1,5 +1,8 @@
 <template>
-  <div class="footer-chat-item__button micro">
+  <div
+    class="footer-chat-item__button micro"
+    :class="{ 'display-none': detectGadget() }"
+  >
     <div class="micro__first-item">
       <div class="micro__title">Для начала записи нажмите кнопку:</div>
       <a @click="toggleRecorder" class="micro__icon micro__icon-1">
@@ -22,10 +25,18 @@
         <img src="@/assets/img/stop.png" alt="" />
       </div>
       <div class="micro__line">
-        <div @click="deleteAudio" class="micro__delete">
+        <div
+          @click="deleteAudio"
+          class="micro__delete"
+          :class="{ 'display-none': !this.recordList.length }"
+        >
           <img src="@/assets/img/micro__delete.png" alt="" />
         </div>
-        <button @click="sendMessage" class="micro__btn">
+        <button
+          @click="sendMessage"
+          class="micro__btn"
+          :class="{ 'display-none': !this.recordList.length }"
+        >
           <svg width="22px" height="19px" viewBox="0 0 512 512">
             <linearGradient
               id="SVGID_3_"
@@ -70,6 +81,7 @@
 <script>
 import Recorder from "../../../services/recorder";
 import moment from "moment";
+import { detect } from "detect-browser";
 
 export default {
   data() {
@@ -84,9 +96,19 @@ export default {
     this.stopRecorder();
   },
   methods: {
+    detectGadget() {
+      const browser = detect();
+      if (
+        ["iOS", "Android OS", "BlackBerry OS", "Windows Mobile"].includes(
+          browser.os
+        )
+      ) {
+        return true;
+      }
+      return false;
+    },
     toggleRecorder() {
       this.setTimer();
-
       if (!this.isRecording || (this.isRecording && this.isPause)) {
         this.recorder.start();
       } else {
@@ -100,7 +122,6 @@ export default {
       this.clearTimer();
       this.recorder.stop();
       this.recordList = this.recorder.recordList();
-      console.log(this.recordList);
 
       this.$store.commit("setFiles", [
         {

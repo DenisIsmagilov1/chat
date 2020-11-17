@@ -4083,3 +4083,7 @@ display: flex;
     left: 0px;
   }
 }
+
+.display-none {
+  display: none;
+}

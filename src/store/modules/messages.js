@@ -12,7 +12,8 @@ export default {
     files: [],
     messages: [],
     needUpdate: true,
-    sendedMessage: false
+    sendedMessage: false,
+    once: false,
   },
   mutations: {
     setMessages(state, messages) {
@@ -65,6 +66,9 @@ export default {
     },
     setSendedMessage(state, bool) {
       state.sendedMessage = bool;
+    },
+    setOnce(state, bool) {
+      state.once = bool
     }
   },
   actions: {
@@ -125,7 +129,7 @@ export default {
       }
     },
     async updateMessages({ commit, state, rootState }) {
-      if (state.freshMessageId && state.needUpdate) {
+      if (state.freshMessageId) {
         try {
           const { botref, currentChatId, currentProgram } = rootState.meta;
           let { freshMessageId } = state;

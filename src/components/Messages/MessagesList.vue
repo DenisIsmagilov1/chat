@@ -96,7 +96,6 @@ export default {
     },
     setIntervalUpdate() {
       if (!this.$store.state.messages.isLoading) {
-        console.log("setInterval");
         return setInterval(() => this.$store.dispatch("updateMessages"), 5000);
       }
       return null;
@@ -128,11 +127,15 @@ export default {
     this.clearIntervalUpdate();
   },
   updated() {
-    console.log("update");
     this.$store.dispatch("resetUnreadMessages");
     this.$store.dispatch("unreadMessagesRequest");
     this.afterFirstScroll = false;
-    if (this.$store.state.meta.search && this.$refs.searched) {
+    if (
+      this.$store.state.meta.search &&
+      this.$refs.searched &&
+      this.$store.state.messages.once
+    ) {
+      this.$store.commit("setOnce", false);
       const { offsetTop } = this.$refs.searched[0].$el;
       const { innerHeight } = window;
       let scroll = 0;

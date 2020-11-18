@@ -125,6 +125,7 @@ export default {
         this.$store.dispatch("unreadMessagesRequest");
       } else {
         this.$store.dispatch("fetchSearchMessage");
+        this.$store.commit("setOnce", true);
       }
     },
     color() {

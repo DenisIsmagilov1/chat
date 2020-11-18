@@ -122,30 +122,32 @@ export default {
       }
     },
     async updateChats({ commit, state, rootState }) {
-      try {
+      if (!rootState.meta.search) {
+        try {
 
-        const { botref, currentFolder } = rootState.meta;
-        let { id, type, program } = currentFolder;
+          const { botref, currentFolder } = rootState.meta;
+          let { id, type, program } = currentFolder;
 
-        if (type || program) {
-          id = undefined
+          if (type || program) {
+            id = undefined
+          }
+
+          const chats = await Api.fetchChats(botref, 0, program, id);
+
+          let newChats = state.chats;
+
+          for (let updChat of chats.data.peers) {
+            newChats = newChats.map(chat => {
+              if ((chat.chat == updChat.chat) && (chat.program == updChat.program) && !chat.searched) {
+                return updChat
+              }
+              return chat
+            })
+          }
+          commit('addChats', newChats);
+        } catch (e) {
+          console.log(e)
         }
-
-        const chats = await Api.fetchChats(botref, 0, program, id);
-
-        let newChats = state.chats;
-
-        for (let updChat of chats.data.peers) {
-          newChats = newChats.map(chat => {
-            if ((chat.chat == updChat.chat) && (chat.program == updChat.program) && !chat.searched) {
-              return updChat
-            }
-            return chat
-          })
-        }
-        commit('addChats', newChats);
-      } catch (e) {
-        console.log(e)
       }
     },
     async updateUrgentChats({ commit, state, rootState }) {

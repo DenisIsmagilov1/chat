@@ -95,7 +95,7 @@ export default {
         commit('setLazyLoading', false)
       }
     },
-    async fetchUrgentChats({ commit, rootState }) {
+    async fetchUrgentChats({ commit, state, rootState }) {
       try {
         const { botref } = rootState.meta;
 
@@ -108,8 +108,13 @@ export default {
           }
         })
 
-        if (sosChats.length || chats.data.unread.length) {
-          commit('concatChats', [...sosChats, ...chats.data.unread])
+        const urgent = [...sosChats, ...chats.data.unread];
+        const urgentIds = urgent.map(chat => chat.chat + chat.program);
+        const peers = state.chats.filter(chat => !urgentIds.includes(chat.chat + chat.program));
+        const newChats = [...urgent, ...peers];
+
+        if (newChats) {
+          commit('addChats', newChats)
         }
 
       } catch (e) {

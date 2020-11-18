@@ -75,8 +75,8 @@ export default {
       }
     },
   },
-  beforeMount() {
-    this.$store.dispatch("fetchChatsRequest");
+  async beforeMount() {
+    await this.$store.dispatch("fetchChatsRequest");
     this.$store.dispatch("fetchUrgentChats");
     this.updateChatInterval = setInterval(() => {
       this.$store.dispatch("updateUrgentChats");

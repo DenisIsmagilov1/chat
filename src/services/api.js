@@ -97,6 +97,7 @@ class Api {
   }
 
   fetchMessagesHistory(botref, program, chat, id) {
+    console.log("History")
     return axios.get(`${this.baseUrl}/history`, {
       params: {
         botref,

@@ -96,6 +96,7 @@ export default {
     },
     setIntervalUpdate() {
       if (!this.$store.state.messages.isLoading) {
+        console.log("setInterval");
         return setInterval(() => this.$store.dispatch("updateMessages"), 5000);
       }
       return null;
@@ -127,6 +128,7 @@ export default {
     this.clearIntervalUpdate();
   },
   updated() {
+    console.log("update");
     this.$store.dispatch("resetUnreadMessages");
     this.$store.dispatch("unreadMessagesRequest");
     this.afterFirstScroll = false;

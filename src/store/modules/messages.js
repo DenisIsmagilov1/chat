@@ -300,14 +300,17 @@ export default {
           }
         }
 
+        let change = false;
         const updMessages = state.messages.map(mess => {
           if (seenMessagesId.includes(String(mess.id))) {
             mess.status = "seen";
+            change = true
           }
           return mess;
         })
 
-        commit("setMessages", updMessages)
+        if (change)
+          commit("setMessages", updMessages)
       }
     }
   },

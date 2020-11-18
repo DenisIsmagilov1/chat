@@ -72,7 +72,7 @@ export default {
     firstCharNickname() {
       const nickname = this.item.profile.nickname || this.item.profile.login;
 
-      let firtsChar = nickname[0];
+      let firtsChar = nickname[0] || " ";
 
       if (
         0xd800 <= firtsChar.charCodeAt(0) &&

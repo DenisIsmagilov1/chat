@@ -164,9 +164,13 @@ export default {
           last_msg_text: response.data.msg_text
         };
 
-        commit("addChat", newChat);
-        commit("setChatId", response.data.peer.chat);
-        commit("setProgram", response.data.program);
+        if (!rootState.chats.chats.map((chat) => chat.chat + chat.program).includes(newChat.chat + newChat.program)) {
+          commit("addChat", newChat);
+        }
+        console.log(newChat)
+        commit("setChatId", newChat.chat);
+        commit("setProgram", newChat.program);
+        dispatch("fetchChatInfoRequest");
         dispatch("fetchFirstMessagesRequest");
       }
     },

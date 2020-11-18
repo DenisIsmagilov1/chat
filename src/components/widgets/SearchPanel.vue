@@ -71,9 +71,21 @@ export default {
       if (this.toggleOuterOpen) {
         this.toggleOuterOpen();
       }
+      if (this.allSearch) {
+        this.$store.commit("setChatId", null);
+        this.$store.commit("setProgram", null);
+        this.$store.commit("setMessages", []);
+        this.$store.commit("setChatInfo", null);
+      }
     },
     onChange() {
       this.$store.dispatch(this.onDispatch, this.query);
+      if (this.allSearch) {
+        this.$store.commit("setChatId", null);
+        this.$store.commit("setProgram", null);
+        this.$store.commit("setMessages", []);
+        this.$store.commit("setChatInfo", null);
+      }
     },
     debouncer: _.debounce((method) => {
       method();

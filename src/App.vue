@@ -5,7 +5,9 @@
         <LeftBar />
         <div class="chat__row">
           <ChatList />
-          <StartPage v-if="!$store.state.meta.currentChatId" />
+          <StartPage
+            v-if="!$store.state.meta.currentChatId && !$store.state.meta.search"
+          />
           <Messages v-else />
           <FilesPopup />
         </div>

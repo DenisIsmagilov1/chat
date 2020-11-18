@@ -3531,42 +3531,23 @@ display: flex;
 }
 
 .smile .smile-item {
-  width: 336px;
-  height: 232px;
-  overflow-y: scroll;
-  background-color: #ffffff;
   position: absolute;
-  top: -244px;
+  top: -423px;
   left: -135px;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
-  padding: 10px;
-  color: #000;
-  overflow-wrap: break-word;
-  font-size: 18px;
-
-  -webkit-box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
-          box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
-  border: 1px solid #e5e5e5;
-  background-color: #ffffff;
 }
   @media (max-width: 1180px) {
     .smile .smile-item {
-      top: -251px;
-      left: -185px;
+      top: -404px;
+      left: -150px;
     }
   }
   @media (max-width: 767px) {
     .smile .smile-item {
-      top: -238px;
-      left: -90px;
-    }
-  }
-  @media (max-width: 500px) {
-    .smile .smile-item {
-      width: 290px;
+      top: -406px;
+      left: -59px;
     }
   }
 .emoji {

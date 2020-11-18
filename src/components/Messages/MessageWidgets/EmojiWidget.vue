@@ -1,13 +1,7 @@
 <template>
   <div class="footer-chat-item__button smile">
     <div class="smile-item">
-      <span
-        class="emoji"
-        v-for="(emoji, index) in emojis"
-        :key="index"
-        @click="onClick(emoji)"
-        >{{ emoji }}</span
-      >
+    <emoji-picker></emoji-picker>;
     </div>
     <svg x="0px" y="0px" width="23.5px" height="23.5px" viewBox="0 0 612 792">
       <linearGradient
@@ -31,14 +25,15 @@
 </template>
 
 <script>
-import emojis from "emojis-list";
 
 export default {
   props: ["onClick"],
-  computed: {
-    emojis() {
-      return emojis.slice(318, -18);
-    },
+  mounted() {
+    document
+      .querySelector("emoji-picker")
+      .addEventListener("emoji-click", (event) =>
+        this.onClick(event.detail.unicode)
+      );
   },
 };
 </script>

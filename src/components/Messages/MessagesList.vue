@@ -110,10 +110,12 @@ export default {
       return search && searchChatMessages.length > 1;
     },
     fetchNextMessage() {
+      this.$store.commit("setOnce", true);
       const nextIndex = this.$store.state.meta.indexMessage + 1;
       this.$store.dispatch("fetchSearchMessageChat", nextIndex);
     },
     fetchPrevMessage() {
+      this.$store.commit("setOnce", true);
       const prevIndex = this.$store.state.meta.indexMessage - 1;
       this.$store.dispatch("fetchSearchMessageChat", prevIndex);
     },

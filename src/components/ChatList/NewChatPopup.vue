@@ -85,7 +85,7 @@
                 class="popup-new__input_bi"
                 placeholder="Введите сообщение..."
                 :min-height="16"
-                :max-height="200"
+                :max-height="66"
               />
             </div>
             <button class="footer-chat-item__button active">

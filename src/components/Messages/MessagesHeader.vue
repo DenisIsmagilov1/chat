@@ -1,7 +1,7 @@
 <template>
   <div class="chat-item__header header-item-chat">
     <div v-if="currentChat" class="header-item-chat__body">
-      <span class="header-item-chat__line line">
+      <span v-if="!searchOpen" class="header-item-chat__line line">
         <span class="line__name"> {{ currentChat.profile.nickname }} </span>
         <div class="line__number">
           {{ currentChat.profile.login }}
@@ -17,7 +17,7 @@
           </span>
         </div>
       </span>
-      <span @click="toggleChatInfo" class="header-item-chat__info info-open">
+      <span  v-if="!searchOpen" @click="toggleChatInfo" class="header-item-chat__info info-open">
         <svg width="23px" height="23px" viewBox="0 0 612 792">
           <linearGradient
             id="SVGID_2_"
@@ -38,7 +38,7 @@
         </svg>
       </span>
       <div class="header-item-chat__search">
-        <SearchPanel :onDispatch="'searchInChat'" />
+        <SearchPanel :onDispatch="'searchInChat'"  />
       </div>
     </div>
     <div

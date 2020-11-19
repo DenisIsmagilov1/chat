@@ -117,7 +117,7 @@ body, html {
 }
 
 .chat__container {
-  max-width: 1326px;
+  width: 100%;
   position: relative;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
@@ -126,8 +126,6 @@ body, html {
 
 @media (max-width: 1180px) {
   .chat__container {
-    margin: 0 auto;
-    max-width: 700px;
     padding: 0 ;
   }
   .chat__container.pad {
@@ -142,7 +140,6 @@ display: -moz-box;
 display: -ms-flexbox;
 display: -webkit-flex;
 display: flex;
-  max-width: 1269px;
   position: relative;
   height: calc(100vh);
   max-height: 792px;
@@ -151,7 +148,7 @@ display: flex;
 .chat__item {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 933px;
-          flex: 0 1 933px;
+          flex: 1 1 100%;
           overflow-y: hidden;
 }
 
@@ -1001,7 +998,7 @@ display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 625px;
+  max-width: 1200px;
   width: 100%;
   position: relative;
 }
@@ -1203,8 +1200,8 @@ display: flex;
 
 .start-chat {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 933px;
-          flex: 0 1 933px;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
 display: -webkit-box;
 display: -moz-box;
 display: -ms-flexbox;
@@ -1812,8 +1809,8 @@ display: flex;
 
 .start-chat {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 933px;
-          flex: 0 1 933px;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
 display: -webkit-box;
 display: -moz-box;
 display: -ms-flexbox;

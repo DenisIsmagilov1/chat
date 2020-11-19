@@ -14,7 +14,7 @@
             id="textarea"
             ref="text"
             :min-height="16"
-            :max-height="200"
+            :max-height="150"
             placeholder="Введите сообщение"
           />
           <div v-else class="footer-chat-item__input_template">

@@ -4025,6 +4025,9 @@ display: flex;
   .popup-new__templates_mobile{
     display: flex;
   }
+  .content-chat-content__arrows {
+    bottom: 138px;
+  }
   .popup-new__row_2{
     margin-bottom: 20px!important;
   }
@@ -4058,7 +4061,9 @@ display: flex;
     left: 0px;
   }
 }
-
+.search__input input {
+  width: 210px;
+}
 .display-none {
   display: none;
 }

@@ -17,7 +17,7 @@
           </span>
         </div>
       </span>
-      <span  v-if="!searchOpen" @click="toggleChatInfo" class="header-item-chat__info info-open">
+      <span v-if="!searchOpen" @click="toggleChatInfo" class="header-item-chat__info info-open">
         <svg width="23px" height="23px" viewBox="0 0 612 792">
           <linearGradient
             id="SVGID_2_"
@@ -38,7 +38,7 @@
         </svg>
       </span>
       <div class="header-item-chat__search">
-        <SearchPanel :onDispatch="'searchInChat'"  />
+        <SearchPanel :onDispatch="'searchInChat'" :toggleOuterOpen="toggleSearchOpen"  />
       </div>
     </div>
     <div
@@ -76,6 +76,11 @@ import SearchPanel from "../widgets/SearchPanel";
 import { getProgram } from "../../services/utils";
 
 export default {
+  data() {
+    return {
+      searchOpen: false,
+    };
+  },
   components: {
     SearchPanel,
   },
@@ -96,6 +101,9 @@ export default {
     },
     toggleChatInfo() {
       this.$store.commit("toggleChatInfo");
+    },
+    toggleSearchOpen() {
+      this.searchOpen = !this.searchOpen;
     },
   },
 };

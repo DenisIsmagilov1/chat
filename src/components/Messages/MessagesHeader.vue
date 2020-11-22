@@ -97,7 +97,7 @@ export default {
   },
   methods: {
     setNullChatId() {
-      this.$store.dispatch("leaveChat");
+      this.$store.dispatch("leaveChatRequest");
     },
     toggleChatInfo() {
       this.$store.commit("toggleChatInfo");

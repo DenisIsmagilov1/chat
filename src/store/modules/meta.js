@@ -126,6 +126,24 @@ export default {
         console.log(e)
       }
     },
+    async leaveChatRequest({ commit }) {
+      try {
+        const { currentChatId, botref, currentProgram, chatInfo } = state;
+
+        if (chatInfo.is_connected) {
+          const response = await Api.leaveChat(botref, currentProgram, currentChatId);
+
+          if (response) {
+            commit("setChatId", null);
+            commit("setProgram", null);
+            commit("setChatInfo", null);
+            commit("setMessages", []);
+          }
+        }
+      } catch (e) {
+        console.log(e)
+      }
+    },
     async toggleBanChatRequest({ state, dispatch }) {
       try {
         const { currentChatId, botref, currentProgram, chatInfo } = state;

@@ -125,7 +125,10 @@ export default {
         return this.$store.getters["nickname"];
       }
 
-      return this.message.sender;
+      return (
+        this.$store.getters.currentChat.profile.nickname ||
+        this.$store.getters.currentChat.profile.login
+      );
     },
     textArray() {
       return this.message.text.trim().split("\n");

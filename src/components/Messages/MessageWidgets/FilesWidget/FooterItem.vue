@@ -7,7 +7,7 @@
     <img v-if="file.type === 'image'" :src="file.url" alt="" />
     <img v-else src="@/assets/img/filee.png" alt="" />
     <div
-      @click="deleteFile(file.id)"
+      @click.stop="deleteFile(file.id)"
       class="preview-chat__slider-small_img__delete"
     ></div>
   </div>

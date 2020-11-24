@@ -126,7 +126,7 @@ export default {
         console.log(e)
       }
     },
-    async leaveChatRequest({ commit }) {
+    async leaveChatRequest({ commit, state }) {
       try {
         const { currentChatId, botref, currentProgram, chatInfo } = state;
 

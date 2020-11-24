@@ -61,6 +61,9 @@ export default {
     setFiles(state, files) {
       state.files = files
     },
+    pushFiles(state, files) {
+      state.files.push(files)
+    },
     setReadStatus(state) {
       state.messages[0].status = "seen"
     },

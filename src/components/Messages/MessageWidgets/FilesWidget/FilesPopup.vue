@@ -6,6 +6,7 @@
     <div class="preview-chat__content">
       <div class="preview-chat__slider-big">
         <VueSlickCarousel
+          :key="this.files.length"
           v-if="files.length"
           @afterChange="afterChangeSlide"
           ref="carousel"
@@ -113,10 +114,10 @@ export default {
     },
     changeFiles() {
       let counter = this.files.length;
-      const newFiles = [];
+      // const newFiles = [];
       for (let i = 0; i < this.$refs.files.files.length; i++) {
         const file = this.$refs.files.files[i];
-        newFiles.push({
+        this.$store.commit("pushFiles", {
           id: counter,
           type: this.getFileType(file.type),
           file: file,
@@ -124,7 +125,7 @@ export default {
         });
         counter += 1;
       }
-      this.$store.commit("setFiles", [...newFiles]);
+      // this.$store.commit("setFiles", [...newFiles]);
     },
     getFileType(rawType) {
       const type = rawType.split("/")[0];

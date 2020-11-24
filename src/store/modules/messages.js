@@ -13,6 +13,7 @@ export default {
     messages: [],
     needUpdate: true,
     sendedMessage: false,
+    updatedMessage: false,
     once: false,
   },
   mutations: {
@@ -72,6 +73,9 @@ export default {
     },
     setOnce(state, bool) {
       state.once = bool
+    },
+    setUpdatedMessage(state, bool) {
+      state.updatedMessage = bool;
     }
   },
   actions: {
@@ -132,8 +136,9 @@ export default {
       }
     },
     async updateMessages({ commit, state, rootState }) {
-      if (state.freshMessageId) {
+      if (state.freshMessageId && !state.updatedMessage) {
         try {
+          commit("setUpdatedMessage", true)
           const { botref, currentChatId, currentProgram } = rootState.meta;
           let { freshMessageId } = state;
 
@@ -149,6 +154,8 @@ export default {
 
         } catch (e) {
           console.log(e)
+        } finally {
+          commit("setUpdatedMessage", false)
         }
       }
     },

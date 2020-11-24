@@ -22,7 +22,9 @@
               <img :src="template.image" alt="" />
             </div>
             <div class="footer-chat-item__input_text">
-              {{ template.text }}
+              <span v-for="(text, index) in textArray" :key="index"
+                >{{ text }}<br
+              /></span>
             </div>
             <div @click="nullTemplateId" class="footer-chat-item__input_close">
               <img src="@/assets/img/cancel-22.png" alt="" />
@@ -108,6 +110,9 @@ export default {
       set(text) {
         return this.$store.commit("updateText", text);
       },
+    },
+    textArray() {
+      return this.template.text.trim().split("\n");
     },
     template() {
       const templates = this.$store.state.options.options.templates;

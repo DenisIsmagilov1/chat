@@ -53,7 +53,9 @@
           <div class="new-templates__image">
             <img v-if="imageUrl" :src="imageUrl" alt="" />
           </div>
-          {{ templateText }}
+          <span v-for="(text, index) in textArray" :key="index"
+            >{{ text }}<br
+          /></span>
         </div>
       </div>
       <div class="new-templates__line new-templates__line_end">
@@ -106,6 +108,11 @@ export default {
     };
   },
   props: ["toggleNewFormOpen"],
+  computed: {
+    textArray() {
+      return this.templateText.trim().split("\n");
+    },
+  },
   methods: {
     createTemplate() {
       if (this.templateName.trim() && this.templateText.trim()) {

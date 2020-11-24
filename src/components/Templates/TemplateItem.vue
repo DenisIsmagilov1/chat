@@ -9,7 +9,9 @@
       <div class="new-templates__image">
         <img v-if="template.image" :src="template.image" alt="" />
       </div>
-      {{ template.text }}
+      <span v-for="(text, index) in textArray" :key="index"
+        >{{ text }}<br
+      /></span>
     </div>
     <div
       v-if="deletable"
@@ -24,6 +26,11 @@
 <script>
 export default {
   props: ["template", "deletable"],
+  computed: {
+    textArray() {
+      return this.template.text.trim().split("\n");
+    },
+  },
   methods: {
     deleteTemplate() {
       this.$store.dispatch("deleteTemplateRequest", this.template.id);

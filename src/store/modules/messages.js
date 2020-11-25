@@ -206,6 +206,10 @@ export default {
         console.log(e)
       }
     },
+    resendMessage({ dispatch, commit }, text) {
+      commit('updateText', text);
+      dispatch('sendMessage');
+    },
     async unreadMessagesRequest({ rootState }) {
       try {
         const { botref, currentChatId, currentProgram } = rootState.meta;

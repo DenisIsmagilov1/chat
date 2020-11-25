@@ -4068,3 +4068,57 @@ display: flex;
 .display-none {
   display: none;
 }
+
+.recipient .content-chat-content__nosend_item {
+  right: auto;
+  left: -31px;
+}
+
+.recipient .content-chat-content__nosend::before {
+  /* border-left: 12px solid  #ffcdda; */
+  background: url(../img/slice122.png);
+  transform: scale(1, 1);
+}
+
+.content-chat-content__nosend {
+  background-color: #ffcdda !important;
+}
+
+.content-chat-content__nosend::before {
+  /* border-right: 12px solid #ffcdda; */
+  background: url(../img/slice122.png);
+}
+
+.content-chat-content__nosend_item {
+  position: absolute;
+  right: -31px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.content-chat-content__nosend_item:hover .content-chat-content__nosend_img {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.content-chat-content__nosend_item:hover .content-chat-content__nosend_resend {
+  opacity: 1;
+  visibility: visible;
+}
+
+.content-chat-content__nosend_img {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.content-chat-content__nosend_resend {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  position: absolute;
+  left: 2px;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+}

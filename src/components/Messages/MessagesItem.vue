@@ -26,6 +26,12 @@
             }"
           >
             {{ getDate }}
+            <span
+              v-if="message.status == 'failed'"
+              class="content-chat-content__nosend_text"
+            >
+              | Не доставлено
+            </span>
           </div>
         </div>
         <div
@@ -34,6 +40,7 @@
             'content-chat-content__item_big': ['image', 'video'].includes(
               message.type
             ),
+            'content-chat-content__nosend': message.status == 'failed',
           }"
         >
           <span v-if="message.text && message.type !== 'file'">
@@ -96,6 +103,22 @@
             >
               {{ button }}
             </button>
+          </div>
+          <div
+            v-if="message.status == 'failed'"
+            class="content-chat-content__nosend_item"
+          >
+            <img
+              class="content-chat-content__nosend_img"
+              src="@/assets/img/attention.png"
+              alt=""
+            />
+            <img
+              @click="resendMessage(message.text)"
+              class="content-chat-content__nosend_resend"
+              src="@/assets/img/resend.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -160,6 +183,10 @@ export default {
       } else {
         return false;
       }
+    },
+    resendMessage(text) {
+      console.log(text);
+      this.$store.dispatch("resendMessage", text);
     },
   },
 };

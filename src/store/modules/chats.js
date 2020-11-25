@@ -43,14 +43,14 @@ export default {
         commit("setLoaded", false)
         commit("addChats", [])
 
-        const { botref, currentFolder } = rootState.meta;
+        const { botref, currentFolder, userToken } = rootState.meta;
         let { id, type, program, name } = currentFolder;
 
         if (type || program) {
           id = undefined
         }
 
-        const chats = await Api.fetchChats(botref, 0, program, id);
+        const chats = await Api.fetchChats(botref, userToken, 0, program, id);
 
         if (chats.data.peers.length > 0 && (name === rootState.meta.currentFolder.name)) {
           const lastMessageTime = chats.data.peers.slice(-1)[0].last_msg_time;
@@ -71,14 +71,14 @@ export default {
       try {
         commit('setLazyLoading', true);
 
-        const { botref, time, currentFolder } = rootState.meta;
+        const { botref, time, currentFolder, userToken } = rootState.meta;
         let { id, type, program, name } = currentFolder;
 
         if (type || program) {
           id = undefined
         }
 
-        const chats = await Api.fetchChats(botref, time, program, id);
+        const chats = await Api.fetchChats(botref, userToken, time, program, id);
 
         if (chats.data.peers.length > 0 && (name === rootState.meta.currentFolder.name)) {
           const lastMessageTime = chats.data.peers.slice(-1)[0].last_msg_time;
@@ -97,9 +97,9 @@ export default {
     },
     async fetchUrgentChats({ commit, state, rootState }) {
       try {
-        const { botref } = rootState.meta;
+        const { botref, userToken } = rootState.meta;
 
-        const chats = await Api.fecthUrgentChats(botref);
+        const chats = await Api.fecthUrgentChats(botref, userToken);
 
         const sosChats = chats.data.sos.map(chat => {
           return {
@@ -125,14 +125,14 @@ export default {
       if (!rootState.meta.search) {
         try {
 
-          const { botref, currentFolder } = rootState.meta;
+          const { botref, currentFolder, userToken } = rootState.meta;
           let { id, type, program } = currentFolder;
 
           if (type || program) {
             id = undefined
           }
 
-          const chats = await Api.fetchChats(botref, 0, program, id);
+          const chats = await Api.fetchChats(botref, userToken, 0, program, id);
 
           let newChats = state.chats;
 
@@ -152,9 +152,9 @@ export default {
     },
     async updateUrgentChats({ commit, state, rootState }) {
       try {
-        const { botref } = rootState.meta;
+        const { botref, userToken } = rootState.meta;
 
-        const chats = await Api.fecthUrgentChats(botref);
+        const chats = await Api.fecthUrgentChats(botref, userToken);
 
         const sosChats = chats.data.sos.map(chat => {
           return {
@@ -195,9 +195,9 @@ export default {
       commit('addChats', updChats)
     },
     async onStartChat({ rootState, commit, state }) {
-      const { botref, currentChatId, currentProgram } = rootState.meta;
+      const { botref, currentChatId, currentProgram, userToken } = rootState.meta;
 
-      const response = await Api.onStart(botref, currentProgram, currentChatId);
+      const response = await Api.onStart(botref, userToken, currentProgram, currentChatId);
 
       if (response.data.is_known) {
         const searchedChat = response.data.selected_peer;

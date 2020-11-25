@@ -31,9 +31,9 @@ export default {
   actions: {
     async fetchFoldersRequest({ commit, rootState }) {
       try {
-        const { botref } = rootState.meta;
+        const { botref, userToken } = rootState.meta;
 
-        const response = await Api.fetchFolders(botref);
+        const response = await Api.fetchFolders(botref, userToken);
 
         if (response.data.folders) {
           commit('setFolders', response.data.folders);
@@ -44,9 +44,9 @@ export default {
     },
     async createFolderRequest({ commit, rootState }, folderName) {
       try {
-        const { botref } = rootState.meta;
+        const { botref, userToken } = rootState.meta;
 
-        const response = await Api.createFolder(botref, folderName);
+        const response = await Api.createFolder(botref, userToken, folderName);
 
         const { success, id, name } = response.data;
 
@@ -62,9 +62,9 @@ export default {
     },
     async fetchQtyFoldersRequest({ commit, rootState }) {
       try {
-        const { botref } = rootState.meta;
+        const { botref, userToken } = rootState.meta;
 
-        const response = await Api.fetchQtyFolders(botref);
+        const response = await Api.fetchQtyFolders(botref, userToken);
 
         if (response.data.counts) {
           commit('setQtyFolders', response.data.counts);
@@ -75,9 +75,9 @@ export default {
     },
     async linkFolderRequest({ dispatch, rootState }, { folder_id, unlink }) {
       try {
-        const { botref, currentChatId, currentProgram } = rootState.meta;
+        const { botref, currentChatId, currentProgram, userToken } = rootState.meta;
 
-        const response = await Api.linkFolder(botref, currentProgram, currentChatId, folder_id, unlink);
+        const response = await Api.linkFolder(botref, userToken, currentProgram, currentChatId, folder_id, unlink);
 
         if (response.data.success) {
           dispatch("fetchChatInfoRequest");
@@ -90,9 +90,9 @@ export default {
     },
     async deleteFolderRequest({ dispatch, rootState }, folder_id) {
       try {
-        const { botref } = rootState.meta;
+        const { botref, userToken } = rootState.meta;
 
-        const response = await Api.deleteFolder(botref, folder_id);
+        const response = await Api.deleteFolder(botref, userToken, folder_id);
 
         console.log(response)
 

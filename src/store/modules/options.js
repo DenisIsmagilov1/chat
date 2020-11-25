@@ -18,24 +18,24 @@ export default {
   },
   actions: {
     async fetchOptionsRequest({ commit, rootState }) {
-      const { botref } = rootState.meta;
+      const { botref, userToken } = rootState.meta;
 
-      const response = await Api.fetchOptions(botref);
+      const response = await Api.fetchOptions(botref, userToken);
       commit('setOptions', response.data)
     },
     async deleteTemplateRequest({ commit, rootState }, id) {
-      const { botref } = rootState.meta;
+      const { botref, userToken } = rootState.meta;
 
-      const response = await Api.deleteTemplate(botref, id);
+      const response = await Api.deleteTemplate(botref, userToken, id);
 
       if (response.data.success) {
         commit('removeTemplate', id)
       }
     },
     async createTemplateRequest({ dispatch, rootState }, template) {
-      const { botref } = rootState.meta;
+      const { botref, userToken } = rootState.meta;
 
-      const response = await Api.createTemplate(botref, template);
+      const response = await Api.createTemplate(botref, userToken, template);
 
       if (response.data.success) {
         dispatch('fetchOptionsRequest')

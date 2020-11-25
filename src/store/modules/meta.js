@@ -3,6 +3,7 @@ import Api from '../../services/api';
 export default {
   state: {
     botref: '', // 62b769d71658
+    userToken: '',
     currentChatId: null,
     chatInfo: null,
     currentProgram: null,
@@ -30,6 +31,9 @@ export default {
     },
     setBotref(state, botref) {
       state.botref = botref;
+    },
+    setUserToken(state, token) {
+      state.userToken = token;
     },
     toggleNewChatPopup(state) {
       state.newChatPopup = !state.newChatPopup
@@ -96,9 +100,9 @@ export default {
   actions: {
     async fetchChatInfoRequest({ state, commit }) {
       try {
-        const { currentChatId, botref, currentProgram } = state;
+        const { currentChatId, botref, currentProgram, userToken } = state;
 
-        const response = await Api.fetchChatInfo(botref, currentProgram, currentChatId);
+        const response = await Api.fetchChatInfo(botref, userToken, currentProgram, currentChatId);
 
         if (response.data && (currentChatId === state.currentChatId)) {
           commit('setChatInfo', response.data)
@@ -128,10 +132,10 @@ export default {
     },
     async leaveChatRequest({ commit, state }) {
       try {
-        const { currentChatId, botref, currentProgram, chatInfo } = state;
+        const { currentChatId, botref, currentProgram, chatInfo, userToken } = state;
 
         if (chatInfo.is_connected) {
-          const response = await Api.leaveChat(botref, currentProgram, currentChatId);
+          const response = await Api.leaveChat(botref, userToken, currentProgram, currentChatId);
 
           if (response) {
             commit("setChatId", null);
@@ -146,10 +150,10 @@ export default {
     },
     async toggleBanChatRequest({ state, dispatch }) {
       try {
-        const { currentChatId, botref, currentProgram, chatInfo } = state;
+        const { currentChatId, botref, currentProgram, chatInfo, userToken } = state;
         const { is_banned } = chatInfo;
 
-        const response = await Api.toggleBanChat(botref, currentProgram, currentChatId, is_banned);
+        const response = await Api.toggleBanChat(botref, userToken, currentProgram, currentChatId, is_banned);
 
         if (response.data.success) {
           dispatch("fetchChatInfoRequest")

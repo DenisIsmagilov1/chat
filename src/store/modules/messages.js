@@ -85,9 +85,9 @@ export default {
         commit('setLoaded', false)
         commit('setLoadingMessages', true)
 
-        const { botref, currentChatId, currentProgram } = rootState.meta;
+        const { botref, currentChatId, currentProgram, userToken } = rootState.meta;
 
-        const response = await Api.fetchMessagesHistory(botref, currentProgram, currentChatId, 0);
+        const response = await Api.fetchMessagesHistory(botref, userToken, currentProgram, currentChatId, 0);
 
         if (response.data.messages.length) {
           const messages = response.data.messages;
@@ -111,11 +111,11 @@ export default {
         try {
           commit('setLazyLoading', true)
 
-          const { botref, currentChatId, currentProgram } = rootState.meta;
+          const { botref, currentChatId, currentProgram, userToken } = rootState.meta;
           let { lastMessageId } = state;
           lastMessageId = -lastMessageId;
 
-          const response = await Api.fetchMessagesHistory(botref, currentProgram, currentChatId, lastMessageId);
+          const response = await Api.fetchMessagesHistory(botref, userToken, currentProgram, currentChatId, lastMessageId);
 
           if (response.data.messages.length && (currentChatId === rootState.meta.currentChatId)) {
             const messages = response.data.messages;
@@ -139,10 +139,10 @@ export default {
       if (state.freshMessageId && !state.updatedMessage) {
         try {
           commit("setUpdatedMessage", true)
-          const { botref, currentChatId, currentProgram } = rootState.meta;
+          const { botref, currentChatId, currentProgram, userToken } = rootState.meta;
           let { freshMessageId } = state;
 
-          const response = await Api.fetchMessagesHistory(botref, currentProgram, currentChatId, freshMessageId);
+          const response = await Api.fetchMessagesHistory(botref, userToken, currentProgram, currentChatId, freshMessageId);
 
           if (response.data.messages.length && (currentChatId === rootState.meta.currentChatId)) {
             const messages = response.data.messages;
@@ -160,10 +160,10 @@ export default {
       }
     },
     async writeFirstRequest({ commit, dispatch, state, rootState }, { phone, message }) {
-      const { botref } = rootState.meta;
+      const { botref, userToken } = rootState.meta;
       const { templateId } = state;
 
-      const response = await Api.writeFirst(botref, phone, message, templateId);
+      const response = await Api.writeFirst(botref, userToken, phone, message, templateId);
 
       commit("setTemplateId", null)
 
@@ -189,9 +189,9 @@ export default {
         if (!state.sendedMessage) {
           const { text, files, templateId } = state;
           commit("updateText", '')
-          const { botref, currentChatId, currentProgram } = rootState.meta;
+          const { botref, currentChatId, currentProgram, userToken } = rootState.meta;
 
-          const response = await Api.sendMessage(botref, currentProgram, currentChatId, text, files, templateId);
+          const response = await Api.sendMessage(botref, userToken, currentProgram, currentChatId, text, files, templateId);
 
           commit('closePopups');
           console.log(response)
@@ -212,9 +212,9 @@ export default {
     },
     async unreadMessagesRequest({ rootState }) {
       try {
-        const { botref, currentChatId, currentProgram } = rootState.meta;
+        const { botref, currentChatId, currentProgram, userToken } = rootState.meta;
 
-        Api.unreadMessages(botref, currentProgram, currentChatId);
+        Api.unreadMessages(botref, userToken, currentProgram, currentChatId);
 
       } catch (e) {
         console.log(e)
@@ -222,9 +222,9 @@ export default {
     },
     async searchAllChats({ commit, rootState }, query) {
       try {
-        const { botref } = rootState.meta;
+        const { botref, userToken } = rootState.meta;
 
-        const response = await Api.searchMessages(botref, query);
+        const response = await Api.searchMessages(botref, userToken, query);
 
         if (response.data.peers) {
           let chats = response.data.peers;
@@ -248,13 +248,13 @@ export default {
     },
     async fetchSearchMessage({ commit, rootState }) {
       try {
-        const { searchMessages, botref, currentChatId, currentProgram } = rootState.meta;
+        const { searchMessages, botref, currentChatId, currentProgram, userToken } = rootState.meta;
 
         let message = searchMessages.find(message => message.botref == botref & message.chat == currentChatId & message.program == currentProgram)
         message.searched = 'searched';
 
-        const oldresponse = await Api.fetchMessagesHistory(botref, currentProgram, currentChatId, message.id);
-        const newresponse = await Api.fetchMessagesHistory(botref, currentProgram, currentChatId, -message.id);
+        const oldresponse = await Api.fetchMessagesHistory(botref, userToken, currentProgram, currentChatId, message.id);
+        const newresponse = await Api.fetchMessagesHistory(botref, userToken, currentProgram, currentChatId, -message.id);
 
         const messages = [...oldresponse.data.messages, message, ...newresponse.data.messages];
 
@@ -269,9 +269,9 @@ export default {
     async searchInChat({ commit, dispatch, rootState }, query) {
       try {
         commit("setIndexMessage", 0)
-        const { botref, currentProgram, currentChatId } = rootState.meta;
+        const { botref, currentProgram, currentChatId, userToken } = rootState.meta;
 
-        const response = await Api.searchMessages(botref, query, currentProgram, currentChatId);
+        const response = await Api.searchMessages(botref, userToken, query, currentProgram, currentChatId);
 
         if (response.data.messages) {
           commit("setSearchChatMessages", response.data.messages);
@@ -284,14 +284,14 @@ export default {
     },
     async fetchSearchMessageChat({ commit, rootState }, index = 0) {
       try {
-        const { searchChatMessages, botref, currentChatId, currentProgram } = rootState.meta;
+        const { searchChatMessages, botref, currentChatId, currentProgram, userToken } = rootState.meta;
 
         let message = searchChatMessages[index]
         if (message) {
           message.searched = 'searched';
 
-          const oldresponse = await Api.fetchMessagesHistory(botref, currentProgram, currentChatId, message.id);
-          const newresponse = await Api.fetchMessagesHistory(botref, currentProgram, currentChatId, -message.id);
+          const oldresponse = await Api.fetchMessagesHistory(botref, userToken, currentProgram, currentChatId, message.id);
+          const newresponse = await Api.fetchMessagesHistory(botref, userToken, currentProgram, currentChatId, -message.id);
 
           const messages = [...oldresponse.data.messages, message, ...newresponse.data.messages];
 
@@ -306,11 +306,11 @@ export default {
       }
     },
     async updateStatusMessage({ rootState, state, commit }) {
-      const { botref, currentChatId, currentProgram } = rootState.meta;
+      const { botref, currentChatId, currentProgram, userToken } = rootState.meta;
       const sentMessages = state.messages.filter(mess => mess.status != "seen");
       const sentMessagesId = sentMessages.map(mess => mess.id).join(',')
 
-      const response = await Api.updateStatusMessage(botref, currentProgram, currentChatId, sentMessagesId);
+      const response = await Api.updateStatusMessage(botref, userToken, currentProgram, currentChatId, sentMessagesId);
 
       if (response) {
 

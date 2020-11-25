@@ -49,9 +49,10 @@ export default {
     },
   },
   async beforeMount() {
-    const { botref, chat, program } = this.$route.query;
+    const { botref, chat, program, user_token } = this.$route.query;
 
     this.$store.commit("setBotref", botref);
+    this.$store.commit("setUserToken", user_token);
     this.$store.commit("setChatId", chat);
     this.$store.commit("setProgram", program);
     await this.$store.dispatch("fetchOptionsRequest");

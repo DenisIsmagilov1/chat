@@ -13,11 +13,13 @@
         class="content-chat-content__icon icon"
         :style="'background-color:' + color()"
       >
-        {{ sender[0] }}
+        {{ profileNickname[0] }}
       </div>
       <div class="content-chat-content__block">
         <div class="content-chat-content__line">
-          <div class="content-chat-content__name">{{ sender }}</div>
+          <div class="content-chat-content__name">
+            {{ profileNickname }}
+          </div>
           <div
             class="content-chat-content__date"
             :class="{
@@ -146,9 +148,9 @@ export default {
       const botref = this.$store.state.meta.botref;
 
       if (botref === this.message.sender) {
-        if (this.message.profile.nickname) {
-          return this.message.profile.nickname;
-        }
+        // if (this.message.profile.nickname) {
+        //   return this.message.profile.nickname;
+        // }
         return this.$store.getters["nickname"];
       }
 
@@ -162,6 +164,13 @@ export default {
     },
     size() {
       return Math.floor(this.message.file_size / 1024) + "кб";
+    },
+    profileNickname() {
+      if (this.message.profile.nickname) {
+        return this.message.profile.nickname;
+      } else {
+        return this.$store.getters["nickname"];
+      }
     },
   },
   methods: {

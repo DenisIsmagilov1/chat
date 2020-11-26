@@ -69,9 +69,7 @@ export default {
         scrollHeight - clientHeight < scrollTop + 100 &&
         !this.$store.state.chats.lazyLoading &&
         !this.$store.state.chats.isLoaded;
-      console.log("scroll", needFetchChats);
       if (needFetchChats) {
-        console.log("needFetchChats");
         this.$store.dispatch("lazyChatsRequest");
       }
     },

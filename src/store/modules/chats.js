@@ -33,6 +33,7 @@ export default {
       state.lazyLoading = loading
     },
     setLoaded(state, loaded) {
+      console.log("loadede", loaded)
       state.isLoaded = loaded
     }
   },

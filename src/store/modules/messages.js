@@ -36,7 +36,7 @@ export default {
     setLazyLoading(state, loadingState) {
       state.isLazyLoading = loadingState
     },
-    setLoaded(state, stateLoaded) {
+    setLoadedMessages(state, stateLoaded) {
       state.isLoaded = stateLoaded
     },
 
@@ -82,7 +82,7 @@ export default {
     async fetchFirstMessagesRequest({ commit, rootState }) {
       try {
         commit('setMessages', [])
-        commit('setLoaded', false)
+        commit('setLoadedMessages', false)
         commit('setLoadingMessages', true)
 
         const { botref, currentChatId, currentProgram, userToken } = rootState.meta;
@@ -97,7 +97,7 @@ export default {
           commit('setFreshMessageId', messages[0].id)
 
           if (messages.length < 32) {
-            commit('setLoaded', true)
+            commit('setLoadedMessages', true)
           }
         }
       } catch (e) {
@@ -124,7 +124,7 @@ export default {
             commit('setLastMessageId', messages.slice(-1)[0].id)
 
             if (messages.length < 32) {
-              commit('setLoaded', true)
+              commit('setLoadedMessages', true)
             }
           }
 

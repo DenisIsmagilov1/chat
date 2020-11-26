@@ -4122,3 +4122,7 @@ display: flex;
   visibility: hidden;
   cursor: pointer;
 }
+
+.is-system {
+  opacity: 0.5;
+}

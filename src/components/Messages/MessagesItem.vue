@@ -5,6 +5,7 @@
       recipient: sender == $store.getters['nickname'],
       sender: sender != $store.getters['nickname'],
       'content-chat-content__message_search': message.searched,
+      'is-system': message.is_system === 1,
     }"
   >
     <div class="content-chat-content__message_container">
@@ -104,7 +105,7 @@
               {{ button }}
             </button>
           </div>
-          <div
+          <!-- <div
             v-if="message.status == 'failed'"
             class="content-chat-content__nosend_item"
           >
@@ -119,7 +120,7 @@
               src="@/assets/img/resend.png"
               alt=""
             />
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -145,6 +146,9 @@ export default {
       const botref = this.$store.state.meta.botref;
 
       if (botref === this.message.sender) {
+        if (this.message.profile.nickname) {
+          return this.message.profile.nickname;
+        }
         return this.$store.getters["nickname"];
       }
 
@@ -184,10 +188,10 @@ export default {
         return false;
       }
     },
-    resendMessage(text) {
-      console.log(text);
-      this.$store.dispatch("resendMessage", text);
-    },
+    // resendMessage(text) {
+    //   console.log(text);
+    //   this.$store.dispatch("resendMessage", text);
+    // },
   },
 };
 </script>

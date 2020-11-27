@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="footer-chat-item__button micro"
-    :class="{ 'display-none': detectGadget() }"
-  >
+  <div class="footer-chat-item__button micro">
     <div class="micro__first-item">
       <div class="micro__title">Для начала записи нажмите кнопку:</div>
       <a @click="toggleRecorder" class="micro__icon micro__icon-1">

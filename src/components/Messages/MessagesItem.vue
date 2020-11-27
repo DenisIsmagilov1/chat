@@ -47,9 +47,7 @@
           }"
         >
           <span v-if="message.text && message.type !== 'file'">
-            <span v-for="(text, index) in textArray" :key="index"
-              >{{ text }}<br
-            /></span>
+            <span v-html="htmlText"></span>
           </span>
           <div
             v-if="message.type === 'image'"
@@ -159,8 +157,8 @@ export default {
         this.$store.getters.currentChat.profile.login
       );
     },
-    textArray() {
-      return this.message.text.trim().split("\n");
+    htmlText() {
+      return this.message.text.trim().replace("\n", "<br>");
     },
     size() {
       return Math.floor(this.message.file_size / 1024) + "кб";

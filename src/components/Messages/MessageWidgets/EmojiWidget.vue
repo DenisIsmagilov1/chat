@@ -3,7 +3,7 @@
     <div class="smile-item">
     <emoji-picker></emoji-picker>;
     </div>
-    <svg x="0px" y="0px" width="23.5px" height="23.5px" viewBox="0 0 612 792">
+    <svg class="emoji-iconn" x="0px" y="0px" width="23.5px" height="23.5px" viewBox="0 0 612 792">
       <linearGradient
         id="SVGID_1_"
         gradientUnits="userSpaceOnUse"

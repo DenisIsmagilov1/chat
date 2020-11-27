@@ -30,7 +30,7 @@
       <div
         v-if="!searchOpen"
         @click="toggleFolderOpen"
-        class="header-list-chat__icon"
+        class="header-list-chat__icon folder-icon"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@
       <div
         v-if="!searchOpen"
         @click="toggleNewChatPopup"
-        class="header-list-chat__icon"
+        class="header-list-chat__icon new-chat-icon"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@
       <div
         v-if="!searchOpen"
         @click="toggleSettingsOpen"
-        class="header-list-chat__icon"
+        class="header-list-chat__icon settings-icon"
       >
         <svg width="23px" height="23px" viewBox="0 0 612 792">
           <linearGradient

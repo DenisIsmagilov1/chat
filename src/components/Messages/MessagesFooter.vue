@@ -63,7 +63,7 @@
             @click="toggleTemplateListPopup"
             class="footer-chat-item__templates"
           >
-            <div class="footer-chat-item__templates_icon">
+            <div class="footer-chat-item__templates_icon ">
               <svg width="23.5px" height="23.5px" viewBox="0 0 612 792">
                 <linearGradient
                   id="SVGID_3_"

@@ -4021,13 +4021,51 @@ display: flex;
   .templates-2 {
     left: 60px;
   }
+  .search__input input {
+    color: #ffffff;
+  }
 }
 @media (max-width: 767px) {
   .popup-new__templates_mobile{
     display: flex;
   }
+  .search svg{
+    height: 20px;
+    width: 20px;
+  }
+  .folder-icon svg{
+    height: 22px;
+    width: 22px;
+  }
+  .new-chat-icon svg{
+    height: 16px;
+    width: 16px;
+  }
+  .settings-icon svg{
+    height: 21px;
+    width: 21px;
+  }
+  .footer-chat-item__button.smile{
+    display: none;
+  }
+  .preview svg{
+    height: 23px;
+    width: 23px;
+  }
+  .footer-chat-item__templates_icon svg{
+    width: 21.5px;
+    height: 21.5px;
+  }
+  .micro__btn svg{
+    width: 21px;
+    height: 18px;
+  }
+  .header-item-chat__info svg{
+    width: 21px;
+    height: 21px; 
+  }
   .chat__row {
-    height: calc(100vh - 40px);
+    height: calc(100vh - 56px);
   }
   .content-chat-content__arrows {
     bottom: 138px;

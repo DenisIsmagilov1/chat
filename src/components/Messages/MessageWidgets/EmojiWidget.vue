@@ -1,9 +1,17 @@
 <template>
-  <div class="footer-chat-item__button smile">
-    <div class="smile-item">
-    <emoji-picker></emoji-picker>;
-    </div>
-    <svg class="emoji-iconn" x="0px" y="0px" width="23.5px" height="23.5px" viewBox="0 0 612 792">
+  <div
+    class="footer-chat-item__button smile"
+    :class="{ 'display-none': detectGadget() }"
+  >
+    <div class="smile-item"><emoji-picker></emoji-picker>;</div>
+    <svg
+      class="emoji-iconn"
+      x="0px"
+      y="0px"
+      width="23.5px"
+      height="23.5px"
+      viewBox="0 0 612 792"
+    >
       <linearGradient
         id="SVGID_1_"
         gradientUnits="userSpaceOnUse"
@@ -25,6 +33,7 @@
 </template>
 
 <script>
+import { detect } from "detect-browser";
 
 export default {
   props: ["onClick"],
@@ -34,6 +43,19 @@ export default {
       .addEventListener("emoji-click", (event) =>
         this.onClick(event.detail.unicode)
       );
+  },
+  methods: {
+    detectGadget() {
+      const browser = detect();
+      if (
+        ["iOS", "Android OS", "BlackBerry OS", "Windows Mobile"].includes(
+          browser.os
+        )
+      ) {
+        return true;
+      }
+      return false;
+    },
   },
 };
 </script>

@@ -63,7 +63,7 @@
             @click="toggleTemplateListPopup"
             class="footer-chat-item__templates"
           >
-            <div class="footer-chat-item__templates_icon ">
+            <div class="footer-chat-item__templates_icon">
               <svg width="23.5px" height="23.5px" viewBox="0 0 612 792">
                 <linearGradient
                   id="SVGID_3_"
@@ -95,6 +95,7 @@
 import EmojiWidget from "./MessageWidgets/EmojiWidget";
 import MicroWidget from "./MessageWidgets/MicroWidget";
 import FilesButton from "./MessageWidgets/FilesWidget/FilesButton";
+import { detect } from "detect-browser";
 
 export default {
   components: {
@@ -137,7 +138,7 @@ export default {
       this.text += emoji;
     },
     pressEnter(event) {
-      if (this.$store.state.options.enterSendMessage) {
+      if (this.$store.state.options.enterSendMessage && !this.detectGadget()) {
         if (event.key === "Enter" && event.shiftKey) {
           // this.text = this.text + "\n";
         } else if (event.key === "Enter") {
@@ -149,6 +150,17 @@ export default {
     },
     nullTemplateId() {
       this.$store.commit("nullTemplateId");
+    },
+    detectGadget() {
+      const browser = detect();
+      if (
+        ["iOS", "Android OS", "BlackBerry OS", "Windows Mobile"].includes(
+          browser.os
+        )
+      ) {
+        return true;
+      }
+      return false;
     },
   },
 };

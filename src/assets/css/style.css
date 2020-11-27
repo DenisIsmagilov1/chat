@@ -4026,6 +4026,9 @@ display: flex;
   .popup-new__templates_mobile{
     display: flex;
   }
+  .chat__row {
+    height: calc(100vh - 40px);
+  }
   .content-chat-content__arrows {
     bottom: 138px;
   }

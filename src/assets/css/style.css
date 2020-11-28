@@ -855,7 +855,9 @@ display: flex;
 .header-item-chat__info path {
   fill: #c3c3c3;
 }
-
+.header-item-chat__info .active path {
+  fill: url(#SVGID_2_);
+}
 .header-item-chat__info:hover path {
   fill: url(#SVGID_2_);
 }

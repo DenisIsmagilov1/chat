@@ -2,7 +2,7 @@
   <div class="chat-item__header header-item-chat">
     <div v-if="currentChat" class="header-item-chat__body">
       <span v-if="!searchOpen" class="header-item-chat__line line">
-        <span class="line__name"> {{ currentChat.profile.nickname }} </span>
+        <span class="line__name"> {{ nickname }} </span>
         <div class="line__number">
           {{ currentChat.profile.login }}
           <span
@@ -101,6 +101,15 @@ export default {
     },
     isConnected() {
       return this.$store.getters.chatIsConnected;
+    },
+    nickname() {
+      if (
+        this.currentChat.profile.nickname &&
+        this.currentChat.profile.nickname.length > 15
+      ) {
+        return this.currentChat.profile.nickname.slice(0, 15) + "..";
+      }
+      return this.currentChat.profile.nickname;
     },
   },
   methods: {

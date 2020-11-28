@@ -13,7 +13,7 @@
         class="content-chat-content__icon icon"
         :style="'background-color:' + color()"
       >
-        {{ profileNickname[0] }}
+        {{ firstCharNickname }}
       </div>
       <div class="content-chat-content__block">
         <div class="content-chat-content__line">
@@ -67,7 +67,7 @@
             v-else-if="message.type === 'file'"
             class="content-chat-content__file"
           >
-            <a download :href="message.url">
+            <a download :href="message.url" target="_blank">
               <div class="content-chat-content__file_icon">
                 <img src="@/assets/img/file.png" alt="" />
               </div>
@@ -158,7 +158,7 @@ export default {
       );
     },
     htmlText() {
-      return this.message.text.trim().replace("\n", "<br>");
+      return this.message.text.trim().replace(/\n/g, "<br>");
     },
     size() {
       return Math.floor(this.message.file_size / 1024) + "кб";
@@ -169,6 +169,20 @@ export default {
       } else {
         return this.$store.getters["nickname"];
       }
+    },
+    firstCharNickname() {
+      const nickname = this.profileNickname;
+
+      let firtsChar = nickname[0] || " ";
+
+      if (
+        0xd800 <= firtsChar.charCodeAt(0) &&
+        firtsChar.charCodeAt(0) <= 0xdbff
+      ) {
+        firtsChar = firtsChar + nickname[1];
+      }
+
+      return firtsChar;
     },
   },
   methods: {
@@ -202,3 +216,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.content-chat-content__item_btn {
+  user-select: none;
+}
+</style>

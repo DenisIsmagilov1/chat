@@ -6,6 +6,7 @@ import Buefy from 'buefy'
 import TextareaAutosize from 'vue-textarea-autosize'
 import { firestorePlugin } from 'vuefire'
 import firebase from 'firebase/app'
+import VueTheMask from 'vue-the-mask'
 import 'firebase/firestore'
 import 'buefy/dist/buefy.css'
 import './assets/css/style.css'
@@ -25,6 +26,8 @@ firebase.initializeApp({
   appId: "1:182530910281:web:47af12a3847e1464c8b798"
 })
 export const db = firebase.firestore()
+
+Vue.use(VueTheMask)
 
 Vue.config.productionTip = false
 

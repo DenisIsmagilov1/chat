@@ -44,6 +44,7 @@
             <div class="popup-new__input popup-new__input_s">
               <input
                 v-model="phone"
+                v-mask="'#(###)-###-####'"
                 type="tel"
                 class="popup-new__input_si"
                 placeholder="Введите номер телефона..."
@@ -142,21 +143,26 @@
 </template>
 
 <script>
+import { mask } from "vue-the-mask";
 export default {
   data() {
     return {
-      phone: "",
+      phone: "7",
       message: "",
     };
   },
+  directives: { mask },
   methods: {
     addChat() {
+      this.phone = this.phone.replace(/[()-]/g, "");
+      console.log(this.phone);
       this.$store.dispatch("writeFirstRequest", {
         phone: this.phone,
         message: this.message,
       });
 
-      this.phone = this.message = "";
+      this.phone = "7";
+      this.message = "";
       this.$store.commit("closePopups");
     },
     openTemplates() {

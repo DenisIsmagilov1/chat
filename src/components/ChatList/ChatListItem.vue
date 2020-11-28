@@ -84,10 +84,13 @@ export default {
       return firtsChar;
     },
     textMessage() {
-      if (this.item.last_msg_text && this.item.last_msg_text.length > 20) {
-        return this.item.last_msg_text.slice(0, 20) + "...";
+      let text = this.item.last_msg_text;
+      text = text.replace(/<\/?[bisc]>/g, "");
+
+      if (text && text.length > 20) {
+        return text.slice(0, 20) + "...";
       } else {
-        return this.item.last_msg_text;
+        return text;
       }
     },
     login() {

@@ -10,6 +10,7 @@
             @keydown="pressEnter"
             v-if="!template"
             v-model="text"
+            rows="1" 
             name=""
             id="textarea"
             ref="text"

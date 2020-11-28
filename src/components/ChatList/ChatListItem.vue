@@ -97,11 +97,8 @@ export default {
       return this.item.profile.login;
     },
     nickname() {
-      if (
-        this.item.profile.nickname &&
-        this.item.profile.nickname.length > 20
-      ) {
-        return this.item.profile.nickname.slice(0, 20) + "...";
+      if (this.item.profile.nickname && this.item.profile.nickname.length > 9) {
+        return this.item.profile.nickname.slice(0, 9) + "..";
       }
       return this.item.profile.nickname;
     },

@@ -659,6 +659,7 @@ display: flex;
   font-weight: 600;
   letter-spacing: 0.07px;
   margin: 0 9px 0 0;
+  width: 82px;
 }
 
 .line__number {

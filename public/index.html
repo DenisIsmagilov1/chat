@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <title><%= htmlWebpackPlugin.options.title %></title>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>	
+  <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
 </head>
 
 <body>
@@ -17,6 +17,17 @@
   </noscript>
   <div id="app"></div>
   <!-- built files will be auto injected -->
+  <script>
+    var body = document.documentElement;
+    if (body.requestFullscreen) {
+      body.requestFullscreen();
+    } else if (body.webkitrequestFullscreen) {
+      body.webkitrequestFullscreen();
+    } else if (body.mozrequestFullscreen) {
+      body.mozrequestFullscreen();
+    } else if (body.msrequestFullscreen) {
+      body.msrequestFullscreen();
+  </script>
 </body>
 
 </html>

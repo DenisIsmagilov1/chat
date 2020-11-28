@@ -1484,8 +1484,8 @@ display: flex;
 
 .content-chat-content__audio audio::-webkit-media-controls-play-button {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   background: url(../img/play.png) center no-repeat;
   background-color: rgba(219, 224, 228, 0.5);
   display: -webkit-box;
@@ -1636,6 +1636,7 @@ display: flex;
   font-weight: 400;
   line-height: 19px;
   position: relative;
+  word-break: normal;
 }
 
 .content-chat-content__item span {
@@ -3997,6 +3998,10 @@ display: flex;
   }
 }
 @media (max-width: 767px) {
+  .settings__header-top{
+    padding: 10px 0 0 15px;
+  }
+  
   .popup-new__templates_mobile{
     display: flex;
   }

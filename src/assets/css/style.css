@@ -1771,10 +1771,8 @@ display: flex;
 
 .recipient .content-chat-content__item::before {
   left: auto;
-  right: -12px;
-  background: url(../img/slice111.png);
-  -webkit-transform: rotate3d(0, 1, 0, 180deg);
-          transform: rotate3d(0, 1, 0, 180deg);
+  right: -11px;
+  background: url(../img/slice131.png);
 }
 
 @media (max-width: 767px) {

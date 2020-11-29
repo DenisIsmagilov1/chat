@@ -941,7 +941,7 @@ display: flex;
           align-items: center;
   border: 2px solid #f1f2f3;
   border-radius: 0px 0 10px 0px;
-  padding: 15px 25px 15px 35px;
+  padding: 19px 25px 19px 35px;
   max-height: 220px;
 }
 
@@ -3536,11 +3536,6 @@ display: flex;
 
 .micro {
   position: relative;
-}
-
-.micro:hover .micro__first-item {
-  opacity: 1;
-  visibility: visible;
 }
 
 .micro__first-item {

@@ -3554,6 +3554,10 @@ display: flex;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
+.micro__first-item.open {
+  opacity: 1;
+  visibility: visible;
+}
 
 .micro__title {
   color: #222222;

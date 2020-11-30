@@ -1,6 +1,6 @@
 <template>
-  <div class="footer-chat-item__button micro">
-    <div class="micro__first-item">
+  <div @click="toggleOpen" class="footer-chat-item__button micro">
+    <div class="micro__first-item" :class="{ open: open }">
       <div class="micro__title">Для начала записи нажмите кнопку:</div>
       <a @click="toggleRecorder" class="micro__icon micro__icon-1">
         <img src="@/assets/img/play.png" alt="" />
@@ -83,6 +83,7 @@ import { detect } from "detect-browser";
 export default {
   data() {
     return {
+      open: false,
       recorder: this._initRecorder(),
       recordList: [],
       timer: null,
@@ -93,6 +94,9 @@ export default {
     this.stopRecorder();
   },
   methods: {
+    toggleOpen() {
+      this.open = !this.open;
+    },
     detectGadget() {
       const browser = detect();
       if (

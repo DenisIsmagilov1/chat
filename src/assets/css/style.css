@@ -413,7 +413,7 @@ display: flex;
       -ms-flex-align: center;
           align-items: center;
   height: 44px;
-  padding: 0 25px;
+  padding: 0 15px 0 25px;
   border: 2px solid #f1f2f3;
   border-radius: 10px 0 0px 0px;
 }
@@ -680,7 +680,7 @@ display: flex;
 }
 
 .line__messenger {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.07px;
   display: inline-block;
@@ -3620,7 +3620,7 @@ display: flex;
 }
 @media (max-width: 1180px) {
   .micro__two-item {
-    top: -168px;
+    top: -368px;
     left: -68px;
   }
   .micro__first-item {
@@ -4138,7 +4138,10 @@ display: flex;
   visibility: hidden;
   cursor: pointer;
 }
-
+.header-item-chat__name{
+  width: auto;
+  max-width: 300px;
+}
 .is-system {
   opacity: 0.5;
 }

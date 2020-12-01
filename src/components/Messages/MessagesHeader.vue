@@ -2,7 +2,7 @@
   <div class="chat-item__header header-item-chat">
     <div v-if="currentChat" class="header-item-chat__body">
       <span v-if="!searchOpen" class="header-item-chat__line line">
-        <span class="line__name"> {{ nickname }} </span>
+        <span class="line__name header-item-chat__name"> {{ nickname }} </span>
         <div class="line__number">
           {{ currentChat.profile.login }}
           <span
